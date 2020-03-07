@@ -198,6 +198,27 @@
             </span>
 
           
+            <span id="/2020/03/06/%E6%96%87%E5%8C%96%E4%BA%BA%E7%B1%BB%E5%AD%A6%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6%E7%9A%84%E5%86%B2%E7%AA%81-%E5%AF%B9%E6%AF%94%E3%80%81%E5%8F%8D%E6%80%9D%E5%92%8C%E5%B1%95%E6%9C%9B/" class="post-meta-item leancloud_visitors" data-flag-title="文化人类学与心理学的冲突：对比、反思和展望" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/03/06/%E6%96%87%E5%8C%96%E4%BA%BA%E7%B1%BB%E5%AD%A6%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6%E7%9A%84%E5%86%B2%E7%AA%81-%E5%AF%B9%E6%AF%94%E3%80%81%E5%8F%8D%E6%80%9D%E5%92%8C%E5%B1%95%E6%9C%9B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/06/%E6%96%87%E5%8C%96%E4%BA%BA%E7%B1%BB%E5%AD%A6%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6%E7%9A%84%E5%86%B2%E7%AA%81-%E5%AF%B9%E6%AF%94%E3%80%81%E5%8F%8D%E6%80%9D%E5%92%8C%E5%B1%95%E6%9C%9B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -271,6 +292,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -458,6 +480,35 @@
   
 
   
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'jQRMt1Bylj51DEpktNVJ4BBj-gzGzoHsz',
+      appKey     : 'Pn6DG2GDwvL4wr7wwM2Ouv4f',
+      placeholder: "欢迎评论留言呀！",
+      avatar     : 'robohash',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
 
 </body>
 </html>
