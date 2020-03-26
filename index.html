@@ -157,6 +157,164 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://knight.abn-team.top/2020/03/25/PyQt5%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%B0%8F%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hoshino">
+      <meta itemprop="description" content="Salvete, amici!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hoshino's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/25/PyQt5%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%B0%8F%E7%BB%93/" class="post-title-link" itemprop="url">PyQt5基本用法&注意事项小结</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-25 21:48:20" itemprop="dateCreated datePublished" datetime="2020-03-25T21:48:20+08:00">2020-03-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-26 17:48:39" itemprop="dateModified" datetime="2020-03-26T17:48:39+08:00">2020-03-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/03/25/PyQt5%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%B0%8F%E7%BB%93/" class="post-meta-item leancloud_visitors" data-flag-title="PyQt5基本用法&注意事项小结" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/03/25/PyQt5%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%B0%8F%E7%BB%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/25/PyQt5%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%B0%8F%E7%BB%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>PyQt5可以说是Python中比较重要，也比较热门的GUI模块，依托Qt的实力而具有丰富的积累。就我目前的了解来看，和Python自带的GUI模块Tkinter相比，PyQt的重要优势是附带的图形界面工具Designer可以帮助开发者高效建立图形界面，以及更丰富的部件和信号发送-处理机制。综合起来，使用体验和Tkinter相比是要好很多的。</p>
+<p>当然，网上关于PyQt的教程已经很多了，我暂时还是在短暂地接触上手的阶段，没有原创的经验。这里摘录一些比较基础、常用的使用示例，我个人遇到的一些问题，以及对应的解决方案。因为来源太多，很难一一记录，这里声明，除有特别说明的以外，本文的示例代码和解决方案都并非原创。</p>
+<h1 id="基础使用和代码示例"><a href="#基础使用和代码示例" class="headerlink" title="基础使用和代码示例"></a>基础使用和代码示例</h1><p>这里简单介绍PyQt及其GUI工具的安装和使用。</p>
+<h2 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h2><p>首先是安装，使用<code>pip install PyQt5</code>安装即可。（PyQt模块体积略大）</p>
+<p>安装完成后，在Python安装目录<code>/Scripts/</code>目录下的<code>designer.exe</code>即为自带的pyqt-tools图形界面工具。开启时似乎会伴有Shell界面，但是在之后关闭也没有影响。界面如图。</p>
+<p><img src="/images/PyQt5-1.png" alt="Designer界面"></p>
+<p>选择Mainwindow或其他默认窗口后，Designer会创建.ui文件以记录图形界面。可以看到，通过Designer，可以非常方便地完成添加、修改部件尺寸，修改部件的其他属性等操作。这确保了GUI编程的效率。自然，有人更喜欢直接使用代码编写GUI界面，网上也有不少教程是这么做的。我个人比较赞同一个观点，就是要<strong>把GUI和逻辑分离</strong>。</p>
+<p>保存后，需要使用PyQt自带的工具<code>/scripts/pyuic.exe</code>将转成Python代码，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyuic5 -o output.py MainScreen.ui</span><br></pre></td></tr></table></figure>
+
+<p>可以看到，<code>output.py</code>将MainScreen封装成了一个重写的类。要调用主窗口类，并将主窗口实例化时，需要另写一个<code>main.py</code>来<strong>提供入口</strong>。以下是常见的形式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> MainScreen</span><br><span class="line"><span class="keyword">from</span> PyQt5 <span class="keyword">import</span> QtCore, QtGui</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QMainWindow, QApplication</span><br><span class="line"></span><br><span class="line">app = QApplication(sys.argv)</span><br><span class="line">MainWindow = QMainWindow()</span><br><span class="line">MainUI = MainScreen.Ui_MainWindow()</span><br><span class="line">MainUI.setupUi(MainWindow)</span><br><span class="line"></span><br><span class="line">MainWindow.show()</span><br><span class="line">sys.exit(app.exec())</span><br></pre></td></tr></table></figure>
+
+<p>对于上述代码，有必要仔细区分<code>MainWindow</code>和<code>MainUI</code>。对组件进行操作时，一般调用<code>MainUI</code>；而对窗口进行操作时，一般调用<code>MainWindow</code>。人为清除窗口时，有<code>MainWindow.destroy()</code>和<code>MainWindow.hide</code>两种方法。经测试，只调用<code>destroy()</code>时，运行不会自动停止；而所有窗口都调用了<code>hide()</code>方法时，运行就会中止。因为没有研究过官方文档，所以这一点还有待讨论。</p>
+<h2 id="部件交互"><a href="#部件交互" class="headerlink" title="部件交互"></a>部件交互</h2><p>这里总结部件交互的基本方式稍作总结。与Tkinter的回调形式不同，PyQt（Qt）采用的是<strong>信号-槽</strong>的信息传递方式，其途径是<code>Sender-Signal</code>到<code>Receiver-Slot</code>，即信号源部件发出特定信号（可以传递参数），而对信号接受部件的槽（如方法）。这为GUI部件之间的信息传递提供了便利。</p>
+<p>一些常用部件有固定的常规信号，如Button。可以通过以下代码将按钮点击信号绑定到方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MainUI.Button1.clicked.connect(func)</span><br></pre></td></tr></table></figure>
+
+<p>要实现一些部件的非常规交互方式，其中一种方式是重写该部件的事件和信号发送的相关方法。如对QPlainTextEdit部件的重写：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PyQt5 <span class="keyword">import</span> QtCore, QtGui, QtWidgets</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NewTextEdit</span><span class="params">(QtWidgets.QPlainTextEdit)</span>:</span></span><br><span class="line">    clicked = QtCore.pyqtSignal()    <span class="comment">#定义clicked信号</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mouseReleaseEvent</span><span class="params">(self, QMouseEvent)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> QMouseEvent.button() == QtCore.Qt.MidButton:</span><br><span class="line">            self.clicked.emit()     <span class="comment">#发送clicked信号</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看到，这段代码通过<code>QtCore.pyqtSignal()</code>定义了一个待发送的信号，并确定了QPlainTextEdit对鼠标中键点击的响应，相当于修改了事件的过滤器。其中的<code>mouseReleaseEvent</code>和<code>QtCore.Qt.MidButton</code>都可以根据需要进行修改，这里只是一个简单的例子。</p>
+<p>部分的信号-槽可以在Designer中添加。无奈的是，上述方式似乎不能通过Designer实现，每次修改GUI并重新生成后都不得不重新补上重写的类。不知道是否有更好的解决方案。</p>
+<p>而RadioButton和CheckButton有更简洁的交互方式，可以直接调用它们的属性，如<code>RadioButton1.isChecked()</code>和<code>CheckButton1.isChecked()</code>。</p>
+<p>对于从文本框获取文本的需求，因为PyQt的类似部件很多，不同文本框部件的获取文本的方法名又不尽相同，还是要参考Qt文档。常用的部件如TextEdit是<code>GetText()</code>，而纯文本常用的PlainTextEdit采用的是<code>toPlainText()</code>。修改文本也是如此，如PlainTextEdit采用的是<code>setPlainText()</code>，而其他的部件，包括Lable，多采用<code>setText()</code>。</p>
+<h1 id="其他常用功能"><a href="#其他常用功能" class="headerlink" title="其他常用功能"></a>其他常用功能</h1><p>这里罗列一些常用的基本功能。</p>
+<h2 id="设置图标"><a href="#设置图标" class="headerlink" title="设置图标"></a>设置图标</h2><p>程序图标设置通过QIcon和窗体的方法实现，如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">icon = QtGui.QIcon()</span><br><span class="line">icon.addPixmap(QtGui.QPixmap(<span class="string">'Icon.ico'</span>), QtGui.QIcon.Normal, QtGui.QIcon.Off)</span><br><span class="line">MainWindow.setWindowIcon(icon)</span><br></pre></td></tr></table></figure>
+
+<p>最后两个参数是图标的模式，我没有测试过具体作用。</p>
+<h2 id="基本对话框"><a href="#基本对话框" class="headerlink" title="基本对话框"></a>基本对话框</h2><p>PyQt提供了几种基本的对话框，即information、warning、fatal、question、about。其具体使用如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result = QMessageBox.information(MainWindow, <span class="string">"OK"</span>, <span class="string">"Configuration file loaded!"</span>, QMessageBox.Ok, QMessageBox.Ok)</span><br></pre></td></tr></table></figure>
+
+<p>这是一种调用默认弹窗静态方法的用法。其中<code>information</code>指明类型，各参数依次是父对象、窗口标题、正文内容、对话框使用的默认按钮和默认焦点所在的按钮。可以使用多个按钮，用“|”分割。这里用户的选择作为返回值赋给result，类型是QMessageBox.Ok等。下面是一个<code>about</code>窗口的用例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QMessageBox.about(MainWindow, <span class="string">'About'</span>, ShowText)</span><br></pre></td></tr></table></figure>
+
+<p>这里的<code>about</code>窗口只能使用默认的确认键。另外，如果设置了程序图标，那么该窗口也会在左侧显示放大的图标。</p>
+<p>这些默认弹窗基本可以满足一般需求，但是如果要求更复杂的交互，就需要另外设计了。Designer提供了相应的模板。</p>
+<h2 id="使用样式"><a href="#使用样式" class="headerlink" title="使用样式"></a>使用样式</h2><p>PyQt支持各类HTML标签和CSS样式。也就是说，可以在文本中使用HTML标签和<code>style</code>来调整文本。如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">style = <span class="string">'font-family: Calibri; font-style: italic; font-size: 12px; font-weight: bold; color: red'</span></span><br><span class="line">ShowText = <span class="string">'&lt;h1&gt;About&lt;/h1&gt;'</span></span><br><span class="line">ShowText += <span class="string">'&lt;p style="&#123;&#125;"&gt;Banzai!!!&lt;br&gt;&lt;/br&gt;&lt;/p&gt;'</span>.format(style)</span><br><span class="line">QMessageBox.about(MainWindow, <span class="string">'About'</span>, ShowText)</span><br></pre></td></tr></table></figure>
+
+<p>另外惊喜的是，经测试，<strong>img标签</strong>同样是可用的，所以也可以用这种方式插入图片。</p>
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>方便归方便，在上手的过程中，我还是遇到了各种意外的情况，这里稍作总结。</p>
+<h2 id="窗体显示"><a href="#窗体显示" class="headerlink" title="窗体显示"></a>窗体显示</h2><p>PyQt窗体貌似默认以低分辨率的模式运行，而这会给布局效果带来<strong>灾难性的影响</strong>。可以使用下面这行代码解决这一问题：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)</span><br><span class="line">app = QApplication(sys.argv)</span><br></pre></td></tr></table></figure>
+
+<p>值得注意的是，这里的顺序似乎是很关键的。另外，对于字体无法显示完全，也有一些其他的解决方案，如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">font = QtGui.QFont(<span class="string">"Arial"</span>)</span><br><span class="line">pointsize = font.pointSize()</span><br><span class="line">font.setPixelSize(int(pointsize / <span class="number">1.25</span>)) <span class="comment"># 1.25是经验值</span></span><br><span class="line">app.setFont(font)</span><br></pre></td></tr></table></figure>
+
+<p>这是通过使用便于自适应的Arial字体，并按比例调节字体大小来解决字体显示问题的。这里只是以主窗体为例，其他的部件同样可以重新设置字体。</p>
+<h2 id="部件布局"><a href="#部件布局" class="headerlink" title="部件布局"></a>部件布局</h2><p><strong>PyQt的部件一定要使用自适应的布局</strong>！这是我经过两天的痛苦摸索之后得出的结论。事实证明，PyQt的窗口在不同机器上的运行结果可能完全不同，而其中可能的原因是对绝对大小的定义的差异，以及对窗口伸展性定义的差异。下面是一个惨不忍睹的窗口效果的例子。（图源：Toyomu的机器）</p>
+<p><img src="/images/PyQt5-2.png" alt="惨不忍睹的窗口效果（图源：Toyomu的机器）"></p>
+<p>而PyQt提供四种基本布局方式，即水平并列、垂直并列、表格布局、表单布局，其具体模式都如字面意思，可以结合需要使用。在Designer中，这些布局方式都很容易设置。另外，要注意对整个窗体，即Designer中默认的<code>centralwidget</code>选用布局，以便部件随窗体大小变化而调整。</p>
+<p><img src="/images/PyQt5-4.png" alt="可以在右键菜单中选取"></p>
+<p>可以看到，通过布局的参数调节，可以设置边距、比例等，达到预期的效果。</p>
+<p><img src="/images/PyQt5-5.png" alt="参数调节"></p>
+<h2 id="使用Pyinstaller打包"><a href="#使用Pyinstaller打包" class="headerlink" title="使用Pyinstaller打包"></a>使用Pyinstaller打包</h2><p>在简单的程序中，使用Pyinstaller打包并不会带来问题。然而，当程序依赖于<strong>资源文件</strong>，如图片时，选择用Pyinstaller打包成<strong>单文件</strong>的exe就会带来问题。首先是，必须将资源文件一并打包。参考网上的其他教程可知，可以通过一般的命令使用Pyinstaller后，修改生成的.spec文件中的设置，添加资源文件夹，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datas &#x3D; [(&#39;res&#39;, &#39;res&#39;)]</span><br></pre></td></tr></table></figure>
+
+<p>其中，元组中的第一个参数是资源文件夹的当前路径，第二个参数指定的是打包后释放文件时的所在路径。</p>
+<p>另一方面，通过一般方式，如相对路径引用、os模块的绝对路径获取，都会得到单文件程序本体所在的路径。然而，Pyinstaller打包的单文件程序的实际操作是，将包中各部分文件释放到以_MEIPASS开头的临时目录中，包括资源文件夹，对本体路径的引用时无效的。所幸，Pyinstaller打包的单文件程序中，会在sys加入<code>sys._MEIPASS</code>这一属性，以便获取实际路径，即临时文件的所在目录。如果要兼顾调试和实际使用，可以定义一个函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GetAbsolutePath</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> getattr(sys, <span class="string">'frozen'</span>, <span class="literal">False</span>): <span class="comment"># 检查环境</span></span><br><span class="line">        dirname = sys._MEIPASS <span class="comment"># 这一行可能会报错，但实际上并没有问题</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        dirname = os.path.dirname(__file__)</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> os.path.join(dirname, filename)</span><br></pre></td></tr></table></figure>
+
+<p>这样，就可以保证引用正确了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://knight.abn-team.top/2020/03/21/%E4%B9%9F%E8%B0%88%E8%B0%88%E6%88%91%E7%9A%84%E4%B8%93%E4%B8%9A/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1025,20 +1183,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
