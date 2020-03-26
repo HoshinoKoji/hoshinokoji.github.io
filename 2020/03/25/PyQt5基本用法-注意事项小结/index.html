@@ -27,18 +27,18 @@
 <meta property="og:site_name" content="Hoshino&#39;s Blog">
 <meta property="og:description" content="前言PyQt5可以说是Python中比较重要，也比较热门的GUI模块，依托Qt的实力而具有丰富的积累。就我目前的了解来看，和Python自带的GUI模块Tkinter相比，PyQt的重要优势是附带的图形界面工具Designer可以帮助开发者高效建立图形界面，以及更丰富的部件和信号发送-处理机制。综合起来，使用体验和Tkinter相比是要好很多的。 当然，网上关于PyQt的教程已经很多了，我暂时还是">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://knight.abn-team.top/images/PyQt5-1.png">
-<meta property="og:image" content="http://knight.abn-team.top/images/PyQt5-2.png">
-<meta property="og:image" content="http://knight.abn-team.top/images/PyQt5-4.png">
-<meta property="og:image" content="http://knight.abn-team.top/images/PyQt5-5.png">
+<meta property="og:image" content="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/pyqt1.png">
+<meta property="og:image" content="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/pyqt3.png">
+<meta property="og:image" content="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/pyqt4.png">
+<meta property="og:image" content="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/pyqt5.png">
 <meta property="article:published_time" content="2020-03-25T13:48:20.000Z">
-<meta property="article:modified_time" content="2020-03-26T09:48:39.093Z">
+<meta property="article:modified_time" content="2020-03-26T10:01:07.674Z">
 <meta property="article:author" content="Hoshino">
 <meta property="article:tag" content="PyQ5">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="GUI">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://knight.abn-team.top/images/PyQt5-1.png">
+<meta name="twitter:image" content="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/pyqt1.png">
 
 <link rel="canonical" href="http://knight.abn-team.top/2020/03/25/PyQt5%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%B0%8F%E7%BB%93/">
 
@@ -197,7 +197,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-26 17:48:39" itemprop="dateModified" datetime="2020-03-26T17:48:39+08:00">2020-03-26</time>
+                <time title="修改时间：2020-03-26 18:01:07" itemprop="dateModified" datetime="2020-03-26T18:01:07+08:00">2020-03-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -246,7 +246,7 @@
 <h1 id="基础使用和代码示例"><a href="#基础使用和代码示例" class="headerlink" title="基础使用和代码示例"></a>基础使用和代码示例</h1><p>这里简单介绍PyQt及其GUI工具的安装和使用。</p>
 <h2 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h2><p>首先是安装，使用<code>pip install PyQt5</code>安装即可。（PyQt模块体积略大）</p>
 <p>安装完成后，在Python安装目录<code>/Scripts/</code>目录下的<code>designer.exe</code>即为自带的pyqt-tools图形界面工具。开启时似乎会伴有Shell界面，但是在之后关闭也没有影响。界面如图。</p>
-<p><img src="/images/PyQt5-1.png" alt="Designer界面"></p>
+<p><img src="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/pyqt1.png" alt="Designer界面"></p>
 <p>选择Mainwindow或其他默认窗口后，Designer会创建.ui文件以记录图形界面。可以看到，通过Designer，可以非常方便地完成添加、修改部件尺寸，修改部件的其他属性等操作。这确保了GUI编程的效率。自然，有人更喜欢直接使用代码编写GUI界面，网上也有不少教程是这么做的。我个人比较赞同一个观点，就是要<strong>把GUI和逻辑分离</strong>。</p>
 <p>保存后，需要使用PyQt自带的工具<code>/scripts/pyuic.exe</code>将转成Python代码，如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pyuic5 -o output.py MainScreen.ui</span><br></pre></td></tr></table></figure>
@@ -292,11 +292,11 @@
 
 <p>这是通过使用便于自适应的Arial字体，并按比例调节字体大小来解决字体显示问题的。这里只是以主窗体为例，其他的部件同样可以重新设置字体。</p>
 <h2 id="部件布局"><a href="#部件布局" class="headerlink" title="部件布局"></a>部件布局</h2><p><strong>PyQt的部件一定要使用自适应的布局</strong>！这是我经过两天的痛苦摸索之后得出的结论。事实证明，PyQt的窗口在不同机器上的运行结果可能完全不同，而其中可能的原因是对绝对大小的定义的差异，以及对窗口伸展性定义的差异。下面是一个惨不忍睹的窗口效果的例子。（图源：Toyomu的机器）</p>
-<p><img src="/images/PyQt5-2.png" alt="惨不忍睹的窗口效果（图源：Toyomu的机器）"></p>
+<p><img src="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/pyqt3.png" alt="惨不忍睹的窗口效果（图源：Toyomu的机器）"></p>
 <p>而PyQt提供四种基本布局方式，即水平并列、垂直并列、表格布局、表单布局，其具体模式都如字面意思，可以结合需要使用。在Designer中，这些布局方式都很容易设置。另外，要注意对整个窗体，即Designer中默认的<code>centralwidget</code>选用布局，以便部件随窗体大小变化而调整。</p>
-<p><img src="/images/PyQt5-4.png" alt="可以在右键菜单中选取"></p>
+<p><img src="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/pyqt4.png" alt="可以在右键菜单中选取"></p>
 <p>可以看到，通过布局的参数调节，可以设置边距、比例等，达到预期的效果。</p>
-<p><img src="/images/PyQt5-5.png" alt="参数调节"></p>
+<p><img src="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/pyqt5.png" alt="参数调节"></p>
 <h2 id="使用Pyinstaller打包"><a href="#使用Pyinstaller打包" class="headerlink" title="使用Pyinstaller打包"></a>使用Pyinstaller打包</h2><p>在简单的程序中，使用Pyinstaller打包并不会带来问题。然而，当程序依赖于<strong>资源文件</strong>，如图片时，选择用Pyinstaller打包成<strong>单文件</strong>的exe就会带来问题。首先是，必须将资源文件一并打包。参考网上的其他教程可知，可以通过一般的命令使用Pyinstaller后，修改生成的.spec文件中的设置，添加资源文件夹，如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datas &#x3D; [(&#39;res&#39;, &#39;res&#39;)]</span><br></pre></td></tr></table></figure>
 
