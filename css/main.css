@@ -387,9 +387,9 @@ code {
   font-family: consolas, Menlo, monospace, "PingFang SC", "Microsoft YaHei";
 }
 code {
-  background: #eee;
+  background: #fffafa;
   border-radius: 3px;
-  color: #555;
+  color: #c7254e;
   padding: 2px 4px;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -412,7 +412,7 @@ code {
   padding: 0;
 }
 .highlight figcaption {
-  background: #eee;
+  background: #fffafa;
   color: #4d4d4c;
   display: flex;
   font-size: 0.875em;
@@ -1163,7 +1163,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff110a;
+  background: #546e6c;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1528,6 +1528,16 @@ pre .javascript .function {
 }
 .use-motion .collection-header {
   opacity: 0;
+}
+.post-body p a {
+  color: #0593d3;
+  border-bottom: none;
+  border-bottom: 1px solid #0593d3;
+}
+.post-body p a:hover {
+  color: #fc6423;
+  border-bottom: none;
+  border-bottom: 1px solid #fc6423;
 }
 .posts-collapse {
   margin-left: 55px;
@@ -2546,4 +2556,19 @@ ul.breadcrumb li + li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
+}
+body {
+  background: url("/images/12.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 50% 46%;
+}
+.content-wrap {
+  opacity: 0.88;
+}
+.sidebar {
+  opacity: 0.9;
+}
+.header-inner {
+  background: rgba(255,255,255,0.9);
 }
