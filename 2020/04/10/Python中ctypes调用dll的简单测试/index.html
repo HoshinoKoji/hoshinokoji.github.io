@@ -20,21 +20,24 @@
     var CONFIG = {"hostname":"knight.abn-team.top","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="来自Keith E. Stanovich所著的How To Think Straight About Psychology，人民邮电出版社，英文版，第十版。简单地摘录一些句子，以备期末作业使用。会附一些简评。">
+  <meta name="description" content="Python便于开发但是效率一般，C&#x2F;C++效率较高但是开发难度相对更大，这可以说是老生常谈了。对于我这样的业余人士而言，效率并不是那么重要，但是如果能够做相对少的工作，而使得性能可以有较大的改善，我当然还是乐意的。这里介绍一下我对ctypes调用dll的简单测试。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How To Think Straight About Psychology - 摘录 1">
-<meta property="og:url" content="http://knight.abn-team.top/2020/03/28/How-to-think-straight-about-psychology-%E6%91%98%E5%BD%951/index.html">
+<meta property="og:title" content="Python中ctypes调用dll的简单测试">
+<meta property="og:url" content="http://knight.abn-team.top/2020/04/10/Python%E4%B8%ADctypes%E8%B0%83%E7%94%A8dll%E7%9A%84%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95/index.html">
 <meta property="og:site_name" content="Hoshino&#39;s Blog">
-<meta property="og:description" content="来自Keith E. Stanovich所著的How To Think Straight About Psychology，人民邮电出版社，英文版，第十版。简单地摘录一些句子，以备期末作业使用。会附一些简评。">
+<meta property="og:description" content="Python便于开发但是效率一般，C&#x2F;C++效率较高但是开发难度相对更大，这可以说是老生常谈了。对于我这样的业余人士而言，效率并不是那么重要，但是如果能够做相对少的工作，而使得性能可以有较大的改善，我当然还是乐意的。这里介绍一下我对ctypes调用dll的简单测试。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-03-28T09:32:54.000Z">
-<meta property="article:modified_time" content="2020-04-05T02:48:46.167Z">
+<meta property="og:image" content="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/ctypes1.png">
+<meta property="og:image" content="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/ctypes2.png">
+<meta property="article:published_time" content="2020-04-10T08:20:59.000Z">
+<meta property="article:modified_time" content="2020-04-10T08:40:25.907Z">
 <meta property="article:author" content="Hoshino">
-<meta property="article:tag" content="摘录">
-<meta property="article:tag" content="这才是心理学">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="ctypes">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/ctypes1.png">
 
-<link rel="canonical" href="http://knight.abn-team.top/2020/03/28/How-to-think-straight-about-psychology-%E6%91%98%E5%BD%951/">
+<link rel="canonical" href="http://knight.abn-team.top/2020/04/10/Python%E4%B8%ADctypes%E8%B0%83%E7%94%A8dll%E7%9A%84%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95/">
 
 
 <script id="page-configurations">
@@ -46,7 +49,7 @@
   };
 </script>
 
-  <title>How To Think Straight About Psychology - 摘录 1 | Hoshino's Blog</title>
+  <title>Python中ctypes调用dll的简单测试 | Hoshino's Blog</title>
   
 
 
@@ -161,7 +164,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://knight.abn-team.top/2020/03/28/How-to-think-straight-about-psychology-%E6%91%98%E5%BD%951/">
+    <link itemprop="mainEntityOfPage" href="http://knight.abn-team.top/2020/04/10/Python%E4%B8%ADctypes%E8%B0%83%E7%94%A8dll%E7%9A%84%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -174,7 +177,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          How To Think Straight About Psychology - 摘录 1
+          Python中ctypes调用dll的简单测试
         </h1>
 
         <div class="post-meta">
@@ -183,28 +186,22 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-03-28 17:32:54" itemprop="dateCreated datePublished" datetime="2020-03-28T17:32:54+08:00">2020-03-28</time>
+              <time title="创建时间：2020-04-10 16:20:59 / 修改时间：16:40:25" itemprop="dateCreated datePublished" datetime="2020-04-10T16:20:59+08:00">2020-04-10</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-05 10:48:46" itemprop="dateModified" datetime="2020-04-05T10:48:46+08:00">2020-04-05</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BF%83%E7%90%86%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">心理学</span></a>
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
                 </span>
             </span>
 
           
-            <span id="/2020/03/28/How-to-think-straight-about-psychology-%E6%91%98%E5%BD%951/" class="post-meta-item leancloud_visitors" data-flag-title="How To Think Straight About Psychology - 摘录 1" title="阅读次数">
+            <span id="/2020/04/10/Python%E4%B8%ADctypes%E8%B0%83%E7%94%A8dll%E7%9A%84%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95/" class="post-meta-item leancloud_visitors" data-flag-title="Python中ctypes调用dll的简单测试" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -219,8 +216,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/03/28/How-to-think-straight-about-psychology-%E6%91%98%E5%BD%951/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/28/How-to-think-straight-about-psychology-%E6%91%98%E5%BD%951/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/04/10/Python%E4%B8%ADctypes%E8%B0%83%E7%94%A8dll%E7%9A%84%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/10/Python%E4%B8%ADctypes%E8%B0%83%E7%94%A8dll%E7%9A%84%E7%AE%80%E5%8D%95%E6%B5%8B%E8%AF%95/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -235,53 +232,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>来自Keith E. Stanovich所著的<em>How To Think Straight About Psychology</em>，人民邮电出版社，英文版，第十版。简单地摘录一些句子，以备期末作业使用。会附一些简评。</p>
+        <p>Python便于开发但是效率一般，C/C++效率较高但是开发难度相对更大，这可以说是老生常谈了。对于我这样的业余人士而言，效率并不是那么重要，但是如果能够做相对少的工作，而使得性能可以有较大的改善，我当然还是乐意的。这里介绍一下我对ctypes调用dll的简单测试。</p>
 <a id="more"></a>
 
-<h2 id="Sentence-1"><a href="#Sentence-1" class="headerlink" title="Sentence 1"></a>Sentence 1</h2><blockquote>
-<p>The term “sciences” also signals where to look for the unity in the discipline of psychology—not to its content, but instead to its methods. (Chap. 1, p. 6)</p>
-</blockquote>
-<p>简评：应该是作者的重要核心论点。部分同意。但是学科毕竟不能只是靠方法来定性。</p>
-<h2 id="Sentence-2"><a href="#Sentence-2" class="headerlink" title="Sentence 2"></a>Sentence 2</h2><blockquote>
-<p>Another source of resistance to scientific psychology stems from the tendency to oppose the expansion of science into areas where unquestioned authorities and “common sense” have long reigned. (Chap. 1, p. 7)</p>
-</blockquote>
-<p>简评：确实如此。想到孙正聿的<strong>“常识化科学”</strong>。</p>
-<h2 id="Sentence-3"><a href="#Sentence-3" class="headerlink" title="Sentence 3"></a>Sentence 3</h2><blockquote>
-<p>If evoluntionary biology, with its long and impressive record of scientific achievements, still engenders public opposition, is it any wonder that psychology, the most recent discipline to bring long-held beliefs about human beings under scientific scrutiny, currently provokes people to deny its validity? (Chap. 1, p. 8)</p>
-</blockquote>
-<p>简评：这个比较的基准有明显的地域色彩，不过就结论来说可能不会有太大分别。确实，没什么好奇怪的，更没有必要为此扰动情绪。至少有效与否的评判是有要求的。</p>
-<h2 id="Sentence-4"><a href="#Sentence-4" class="headerlink" title="Sentence 4"></a>Sentence 4</h2><blockquote>
-<p>Any aspect of the universe is fair game for the development of a scientific discipline, including all aspects of human behavior. We cannot divide the universe into “scientific” and “nonscientific” topic. (Chap. 1, p. 8)</p>
-</blockquote>
-<p>简评：可以说是对第一句的补充。</p>
-<h2 id="Sentence-5"><a href="#Sentence-5" class="headerlink" title="Sentence 5"></a>Sentence 5</h2><blockquote>
-<p>No, the empirical of approach is not necessarily obvious, which is why we often have to teach it, even in a society that is dominated by science. (Chap. 1, p. 9)</p>
-</blockquote>
-<p>简评：能提出这一点是很好的。</p>
-<h2 id="Sentence-6"><a href="#Sentence-6" class="headerlink" title="Sentence 6"></a>Sentence 6</h2><blockquote>
-<p>Scientific observation is termed systematic because it is structured so that the results of the observation reveal something about the underlying nature of the world. Scientific observations are usually theory driven; thry test different explanations of the nature of the world. (Chap.1, p. 10)</p>
-</blockquote>
-<p>简评：很重要，也很值得深入思考的一点，这要求包括重新审视在内的行动。怎样才是系统的观察？</p>
-<h2 id="Sentence-7"><a href="#Sentence-7" class="headerlink" title="Sentence 7"></a>Sentence 7</h2><blockquote>
-<p>Science deals with solvable, or specifiable problems. This means that the types of questions that scientists address are potentially answerable by means of currently available empirical techniques. If a problem is not solvable or a theory is not testable by the empirical techniques that scientists have at hand, then scientists will not attack it. (Chap. 1, p. 12) </p>
-</blockquote>
-<p>简评：很难否认这一点，但是这个论述还是让人不太满意。</p>
-<h2 id="Sentence-8"><a href="#Sentence-8" class="headerlink" title="Sentence 8"></a>Sentence 8</h2><blockquote>
-<p>What makes a theory testable? The theory must have specific implications for observable events in the natural world; this is what is meant by empirically testable. This criterion of testability is often called the falsifiability criterion. (Chap.1, p. 12)</p>
-</blockquote>
-<p>简评：可以看出，作者基本把可检验和可证伪等同起来，并作为科学理论的基本性质。这也是令人不太满意的一点。</p>
-<h2 id="Sentence-9"><a href="#Sentence-9" class="headerlink" title="Sentence 9"></a>Sentence 9</h2><blockquote>
-<p>Psychology itself provides many good examples of the development from the unsolvable to the solvable. THere are many questions(such as “How does a child aquire the language of his or her parents?” “Why do we forget things we once know?” “How does being in a group change a person’s behavior and thinking?”) that had been the subjects of philosophical speculation for centuries before anyone recognized that they could be addressed empirical means. (Chap. 1, p. 13)</p>
-</blockquote>
-<p>简评：对这一点基本认同，所以也可以撤回对Sentence 7的部分质疑。不过，这种二分有时可能还是有害的。</p>
-<h2 id="Sentence-10"><a href="#Sentence-10" class="headerlink" title="Sentence 10"></a>Sentence 10</h2><blockquote>
-<p>Science makes the idea of public verifiability concrete via the procedure of replication. In order to be considered in the realm of science, a finding must be presented to the scientific community in a way that enables other scientists to attempt the same experiment and obtain the same results. (Chap. 1, p. 10)</p>
-</blockquote>
-<p>简评：在经典、典型的科学中，这当然是铁律。但机械地遵从这一原则，真的就高枕无忧了吗？</p>
-<h2 id="Sentence-11"><a href="#Sentence-11" class="headerlink" title="Sentence 11"></a>Sentence 11</h2><blockquote>
-<p>One ironclad criterion that will always work for the public when presented with scientific claims of uncertain validity is the question, Have the findings been published in a recognized scientific journal that uses some type of peer review procedure? (Chap. 1, p. 11)</p>
-</blockquote>
-<p>简评：对公众来说是如此。然而对于学界来说，同行评议似乎偶尔也会成为双刃剑。</p>
+<p>首先，编写一个C的程序。这里使用最简单的累加来测试速度。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* test.c */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sumup</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sumup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">1</span>; i &lt;= <span class="number">1000000</span>; i++) &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后，使用gcc将test.c编译为Python可以调用的dll（注意是否添加了环境变量）。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc <span class="keyword">test</span>.c -shared -fPIC -o <span class="keyword">test</span>.dll</span><br></pre></td></tr></table></figure>
+
+<p>在Python中分别通过ctypes调用sumup累加和使用Python实现累加，并通过装饰器（鸣谢：@Toyomu）计时。由于单次运行时间较短，为方便起见，这里选择了在Python中循环调用来延长时间。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> ctypes <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">fw = open(<span class="string">'data.dat'</span>, <span class="string">'w'</span>)   <span class="comment"># 记录数据用于分析</span></span><br><span class="line">dll = CDLL(<span class="string">r'.\test.dll'</span>)   <span class="comment"># 加载dll</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用装饰器重复调用，计时输出并记录</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco</span><span class="params">(order)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(func)</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">_deco</span><span class="params">()</span>:</span>    </span><br><span class="line">            t1 = time()</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">50</span>):</span><br><span class="line">                func()</span><br><span class="line">            t2 = time() - t1</span><br><span class="line">            print(<span class="string">'Time cost of &#123;&#125;: &#123;&#125;'</span>.format(func.__name__, t2))</span><br><span class="line">            fw.write(<span class="string">'&#123;:.5f&#125;,'</span>.format(t2)) <span class="keyword">if</span> order == <span class="number">1</span> <span class="keyword">else</span> fw.write(<span class="string">'&#123;:.5f&#125;\n'</span>.format(t2))</span><br><span class="line">        <span class="keyword">return</span> _deco</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@deco(order = 1)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">c</span><span class="params">()</span>:</span></span><br><span class="line">    dll.sumup()</span><br><span class="line"></span><br><span class="line"><span class="meta">@deco(order = 2)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">py</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1000000</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成多组数据</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">80</span>):</span><br><span class="line">    c()</span><br><span class="line">    py()</span><br><span class="line"></span><br><span class="line">fw.close()</span><br></pre></td></tr></table></figure>
+
+<p>结束后，在data.dat中可见用时数据记录。</p>
+<p><img src="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/ctypes1.png" alt="data.dat"></p>
+<p>这里已经显然可以看到运行速度的巨大差异。我们在SPSS中使用配对样本t-test来进一步验证。</p>
+<p><img src="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/ctypes2.png" alt="data.dat"></p>
+<p>可见，p &lt; 0.001，结果非常显著。</p>
+<p>作为业余人士，这样的结果还是很让我惊喜的。调用过程并不复杂，而性能的差异也是十分明显的，这也是预料之中的。C/C++的强大自不必说，但Python的体验更佳这一点也是自然的，所以对我来说，以Python为主体，而在制约性能的模块上部分采用C/C++重写是很好的策略。当然，这似乎也是实际开发中的常态了。</p>
 
     </div>
 
@@ -291,8 +259,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%91%98%E5%BD%95/" rel="tag"># 摘录</a>
-              <a href="/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag"># 这才是心理学</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/ctypes/" rel="tag"># ctypes</a>
           </div>
 
         
@@ -301,13 +269,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/25/PyQt5%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%B0%8F%E7%BB%93/" rel="prev" title="PyQt5基本用法&注意事项小结">
-      <i class="fa fa-chevron-left"></i> PyQt5基本用法&注意事项小结
+    <a href="/2020/04/04/How-to-think-straight-about-psychology-%E6%91%98%E5%BD%952/" rel="prev" title="How To Think Straight About Psychology - 摘录 2">
+      <i class="fa fa-chevron-left"></i> How To Think Straight About Psychology - 摘录 2
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/04/04/How-to-think-straight-about-psychology-%E6%91%98%E5%BD%952/" rel="next" title="How To Think Straight About Psychology - 摘录 2">
-      How To Think Straight About Psychology - 摘录 2 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -368,7 +333,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sentence-1"><span class="nav-number">1.</span> <span class="nav-text">Sentence 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sentence-2"><span class="nav-number">2.</span> <span class="nav-text">Sentence 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sentence-3"><span class="nav-number">3.</span> <span class="nav-text">Sentence 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sentence-4"><span class="nav-number">4.</span> <span class="nav-text">Sentence 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sentence-5"><span class="nav-number">5.</span> <span class="nav-text">Sentence 5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sentence-6"><span class="nav-number">6.</span> <span class="nav-text">Sentence 6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sentence-7"><span class="nav-number">7.</span> <span class="nav-text">Sentence 7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sentence-8"><span class="nav-number">8.</span> <span class="nav-text">Sentence 8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sentence-9"><span class="nav-number">9.</span> <span class="nav-text">Sentence 9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sentence-10"><span class="nav-number">10.</span> <span class="nav-text">Sentence 10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sentence-11"><span class="nav-number">11.</span> <span class="nav-text">Sentence 11</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
