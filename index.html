@@ -227,14 +227,115 @@
 
       
           
-        <div id="aplayer-cKofiaci" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
+        <div id="aplayer-NACTxyns" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
 			  <script>
 				  var options = {"narrow":false,"autoplay":true,"showlrc":0,"width":"56%","mode":"single","mutex":true,"theme":"#e6d0b2","preload":"auto","listmaxheight":"413px","music":[{"title":"Three Piano Pieces, Op. 11(1909)：1.Mäßige Viertel","author":"Maurizio Pollini","url":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/Test.mp3","pic":"https://hoshino-group-share.oss-cn-beijing.aliyuncs.com/Test.jpg","lrc":""}]};
-				  options.element = document.getElementById("aplayer-cKofiaci");
+				  options.element = document.getElementById("aplayer-NACTxyns");
 				  var ap = new APlayer(options);
 			    window.aplayers || (window.aplayers = []);
 				  window.aplayers.push(ap);
 			  </script>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://knight.abn-team.top/2020/07/31/Numpy%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hoshino">
+      <meta itemprop="description" content="Salvete, amici!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hoshino's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/31/Numpy%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">Numpy数据存储用法记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-07-31 12:56:12 / 修改时间：13:17:22" itemprop="dateCreated datePublished" datetime="2020-07-31T12:56:12+08:00">2020-07-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/07/31/Numpy%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/" class="post-meta-item leancloud_visitors" data-flag-title="Numpy数据存储用法记录" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/07/31/Numpy%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/31/Numpy%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>使用Numpy的时候经常涉及大量数据的反复使用，需要存储。我没有专门查文档，直接通过Tab自动补全找到了save和load，基本用法也很简单。</p>
+<h2 id="numpy-save"><a href="#numpy-save" class="headerlink" title="numpy.save"></a>numpy.save</h2><p>对于基本使用来说，<code>numpy.save</code>只需要处理两个参数：文件名、变量，如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"></span><br><span class="line">data = numpy.zeros([<span class="number">5</span>, <span class="number">5</span>])</span><br><span class="line">numpy.save(<span class="string">'data'</span>, arr = data)</span><br></pre></td></tr></table></figure>
+
+<p>虽然参数写的是<code>&#39;data&#39;</code>，但是实际上会保存成<code>data.npy</code>。</p>
+<p>此外还有<code>numpy.savez</code>，推测是使用gzip压缩。</p>
+<h2 id="numpy-load"><a href="#numpy-load" class="headerlink" title="numpy.load"></a>numpy.load</h2><p><code>numpy.load</code>的基本用法也比较简单，不过比<code>numpy.save</code>稍微多一点坑。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line">data = numpy.load(<span class="string">'data.npy'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>注意，<code>numpy.save</code>会自动加上.npy的扩展名，但是<code>numpy.load</code>要写上完整文件名。对于用纯numpy的数据结构保存的文件，用上述语句就足够了。但是如果使用了<code>list</code>，<code>dict</code>这样的数据结构，就要多加一点内容：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data = numpy.load(<span class="string">'data.npy'</span>, allow_pickle = <span class="literal">True</span>).item()</span><br></pre></td></tr></table></figure>
+
+<p>通过这一语句，就可以顺利提取非numpy数据结构保存的内容。</p>
+
       
     </div>
 
@@ -349,107 +450,6 @@
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://knight.abn-team.top/2020/07/31/Numpy%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Hoshino">
-      <meta itemprop="description" content="Salvete, amici!">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hoshino's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/31/Numpy%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">Numpy数据存储用法记录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-07-31 12:56:12 / 修改时间：13:15:48" itemprop="dateCreated datePublished" datetime="2020-07-31T12:56:12+08:00">2020-07-31</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/07/31/Numpy%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/" class="post-meta-item leancloud_visitors" data-flag-title="Numpy数据存储用法记录" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/07/31/Numpy%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/31/Numpy%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>使用Numpy的时候经常涉及大量数据的反复使用，需要存储。我没有专门查文档，直接通过Tab自动补全找到了save和load，基本用法也很简单。</p>
-<h2 id="numpy-save"><a href="#numpy-save" class="headerlink" title="numpy.save"></a>numpy.save</h2><p>对于基本使用来说，<code>numpy.save</code>只需要处理两个参数：文件名、变量，如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"></span><br><span class="line">data = numpy.zeros([<span class="number">5</span>, <span class="number">5</span>])</span><br><span class="line">numpy.save(<span class="string">'data'</span>, arr = data)</span><br></pre></td></tr></table></figure>
-
-<p>虽然参数写的是<code>&#39;data&#39;</code>，但是实际上会保存成<code>data.npy</code>。</p>
-<p>此外还有<code>numpy.savez</code>，推测是使用gzip压缩。</p>
-<h2 id="numpy-load"><a href="#numpy-load" class="headerlink" title="numpy.load"></a>numpy.load</h2><p><code>numpy.load</code>的基本用法也比较简单，不过比<code>numpy.save</code>稍微多一点坑。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line">data = numpy.load(<span class="string">'data.npy'</span>)</span><br></pre></td></tr></table></figure>
-
-<p>注意，<code>numpy.save</code>会自动加上.npy的扩展名，但是<code>numpy.load</code>要写上完整文件名。对于用纯numpy的数据结构保存的文件，用上述语句就足够了。但是如果使用了<code>list</code>，<code>dict</code>这样的数据结构，就要多加一点内容：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data = numpy.load(<span class="string">'data.npy'</span>, allow_pickle = <span class="literal">True</span>).item()</span><br></pre></td></tr></table></figure>
-
-<p>通过这一语句，就可以顺利提取非numpy数据结构保存的内容。</p>
-
       
     </div>
 
