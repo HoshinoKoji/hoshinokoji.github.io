@@ -20,17 +20,21 @@
     var CONFIG = {"hostname":"knight.abn-team.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Salvete, amici!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hoshino&#39;s Blog">
-<meta property="og:url" content="http://knight.abn-team.top/categories/%E8%AE%A1%E5%88%92/index.html">
+  <meta name="description" content="Git适合基于纯文本类文件的多人协作，但是对于一般的文件同步需求来说显得过于复杂，所以最近尝试在自己的CentOS云主机上安装了一个类似于私有云盘的Nextcloud，这里记录一下安装过程。 由于中途参考了大量博客和论坛的解决方案，这里就不一一声明和记录了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于Snap的Nextcloud安装与配置">
+<meta property="og:url" content="http://knight.abn-team.top/2020/09/14/%E5%9F%BA%E4%BA%8ESnap%E7%9A%84Nextcloud%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Hoshino&#39;s Blog">
-<meta property="og:description" content="Salvete, amici!">
+<meta property="og:description" content="Git适合基于纯文本类文件的多人协作，但是对于一般的文件同步需求来说显得过于复杂，所以最近尝试在自己的CentOS云主机上安装了一个类似于私有云盘的Nextcloud，这里记录一下安装过程。 由于中途参考了大量博客和论坛的解决方案，这里就不一一声明和记录了。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-14T01:31:29.000Z">
+<meta property="article:modified_time" content="2020-09-14T04:29:11.205Z">
 <meta property="article:author" content="Hoshino">
+<meta property="article:tag" content="Nextcloud">
+<meta property="article:tag" content="云同步">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://knight.abn-team.top/categories/%E8%AE%A1%E5%88%92/">
+<link rel="canonical" href="http://knight.abn-team.top/2020/09/14/%E5%9F%BA%E4%BA%8ESnap%E7%9A%84Nextcloud%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
 
 
 <script id="page-configurations">
@@ -38,12 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>分类: 计划 | Hoshino's Blog</title>
+  <title>基于Snap的Nextcloud安装与配置 | Hoshino's Blog</title>
   
 
 
@@ -152,57 +156,139 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://knight.abn-team.top/2020/09/14/%E5%9F%BA%E4%BA%8ESnap%E7%9A%84Nextcloud%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hoshino">
+      <meta itemprop="description" content="Salvete, amici!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hoshino's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          基于Snap的Nextcloud安装与配置
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-09-14 09:31:29 / 修改时间：12:29:11" itemprop="dateCreated datePublished" datetime="2020-09-14T09:31:29+08:00">2020-09-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" itemprop="url" rel="index"><span itemprop="name">软件安装</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/09/14/%E5%9F%BA%E4%BA%8ESnap%E7%9A%84Nextcloud%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="post-meta-item leancloud_visitors" data-flag-title="基于Snap的Nextcloud安装与配置" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">计划
-          <small>分类</small>
-        </h2>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/09/14/%E5%9F%BA%E4%BA%8ESnap%E7%9A%84Nextcloud%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/09/14/%E5%9F%BA%E4%BA%8ESnap%E7%9A%84Nextcloud%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <p>Git适合基于纯文本类文件的多人协作，但是对于一般的文件同步需求来说显得过于复杂，所以最近尝试在自己的CentOS云主机上安装了一个类似于私有云盘的Nextcloud，这里记录一下安装过程。</p>
+<p>由于中途参考了大量博客和论坛的解决方案，这里就不一一声明和记录了。</p>
+<a id="more"></a>
+
+<h2 id="安装Snap"><a href="#安装Snap" class="headerlink" title="安装Snap"></a>安装Snap</h2><p>据说新版的Ubuntu自带了Snap，但是我当前使用的CentOS显然没有，这里使用yum安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install snapd</span><br></pre></td></tr></table></figure>
+
+<p>安装完Snap之后就遇到了第一个坑，无法继续进行，这里要先做一些处理：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl unmask snapd.service</span><br><span class="line">systemctl <span class="built_in">enable</span> snapd.service</span><br><span class="line">systemctl start snapd.service</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装Nextcloud"><a href="#安装Nextcloud" class="headerlink" title="安装Nextcloud"></a>安装Nextcloud</h2><p>使用Snap安装Nextcloud也比较简单：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo snap install nextcloud</span><br><span class="line">sudo snap start nextcloud</span><br></pre></td></tr></table></figure>
+
+<p>完成后，首先要进入初始化页面完成初始化安装，默认地址是http://&lt;IP/域名&gt;，但是因为我的80和443端口都无法使用，就要先更改HTTP监听的端口再完成初始化，这里以81为例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo snap <span class="built_in">set</span> nextcloud ports.http=81</span><br><span class="line">sudo snap restart nextcloud</span><br></pre></td></tr></table></figure>
+
+<p>修改端口以后，就可以进入页面完成初始化配置了。</p>
+<h2 id="启用HTTPS"><a href="#启用HTTPS" class="headerlink" title="启用HTTPS"></a>启用HTTPS</h2><p>配置完成后，就可以通过HTTP访问了，但是HTTP毕竟不安全，自然要配置HTTPS。</p>
+<p><code>Nextcloud</code>有专门的CLI来处理HTTPS配置，但使用之前建议重启系统，否则新添加的PATH环境变量可能还不能生效。我用Let’s Encrypt获得了泛域名证书，所以直接配置证书路径：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># nextcloud.enable-https [lets-encrypt|self-signed|custom|-h]</span></span><br><span class="line"><span class="comment"># -s表示严格HTTPS</span></span><br><span class="line">nextcloud.enable-https custom -s cert.pem key.pem chain.pem</span><br></pre></td></tr></table></figure>
+
+<p>完成后，再重启<code>Nextcloud</code>即可用HTTPS访问。修改端口同上所述。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-08T23:29:11+08:00"
-              content="2020-03-08">
-          03-08
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Nextcloud/" rel="tag"># Nextcloud</a>
+              <a href="/tags/%E4%BA%91%E5%90%8C%E6%AD%A5/" rel="tag"># 云同步</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/03/08/%E5%B0%86%E6%9D%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%A1%E5%88%92/" itemprop="url">
-            <span itemprop="name">将来的一些计划</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/07/31/Numpy%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/" rel="prev" title="Numpy数据存储用法记录">
+      <i class="fa fa-chevron-left"></i> Numpy数据存储用法记录
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -249,6 +335,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Snap"><span class="nav-number">1.</span> <span class="nav-text">安装Snap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Nextcloud"><span class="nav-number">2.</span> <span class="nav-text">安装Nextcloud</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用HTTPS"><span class="nav-number">3.</span> <span class="nav-text">启用HTTPS</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
