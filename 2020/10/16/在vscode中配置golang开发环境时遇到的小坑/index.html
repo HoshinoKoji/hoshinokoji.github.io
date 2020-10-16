@@ -20,17 +20,21 @@
     var CONFIG = {"hostname":"knight.abn-team.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Salvete, amici!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hoshino&#39;s Blog">
-<meta property="og:url" content="http://knight.abn-team.top/archives/page/3/index.html">
+  <meta name="description" content="从官网下载golang的安装包完成安装，并且在vscode里也装好拓展之后还不能正常调试和运行，提示需要补充安装一系列的插件。这时问题来了，无论重试多少次，抑或是在命令行窗口里手动输安装的命令go get xxx，都无一例外地提示错误…… 网上相关教程很多，基本上是要手动到github或者golang官网把插件下载回来，再放好路径配置安装，然而vscode提示有17个插件要装，要是全部手动完成就太">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在vscode中配置golang开发环境时遇到的小坑">
+<meta property="og:url" content="http://knight.abn-team.top/2020/10/16/%E5%9C%A8vscode%E4%B8%AD%E9%85%8D%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%B0%8F%E5%9D%91/index.html">
 <meta property="og:site_name" content="Hoshino&#39;s Blog">
-<meta property="og:description" content="Salvete, amici!">
+<meta property="og:description" content="从官网下载golang的安装包完成安装，并且在vscode里也装好拓展之后还不能正常调试和运行，提示需要补充安装一系列的插件。这时问题来了，无论重试多少次，抑或是在命令行窗口里手动输安装的命令go get xxx，都无一例外地提示错误…… 网上相关教程很多，基本上是要手动到github或者golang官网把插件下载回来，再放好路径配置安装，然而vscode提示有17个插件要装，要是全部手动完成就太">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-16T11:14:03.000Z">
+<meta property="article:modified_time" content="2020-10-16T11:24:11.073Z">
 <meta property="article:author" content="Hoshino">
+<meta property="article:tag" content="golang">
+<meta property="article:tag" content="vscode">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://knight.abn-team.top/archives/page/3/">
+<link rel="canonical" href="http://knight.abn-team.top/2020/10/16/%E5%9C%A8vscode%E4%B8%AD%E9%85%8D%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%B0%8F%E5%9D%91/">
 
 
 <script id="page-configurations">
@@ -38,12 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | Hoshino's Blog</title>
+  <title>在vscode中配置golang开发环境时遇到的小坑 | Hoshino's Blog</title>
   
 
 
@@ -152,99 +156,126 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://knight.abn-team.top/2020/10/16/%E5%9C%A8vscode%E4%B8%AD%E9%85%8D%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%B0%8F%E5%9D%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hoshino">
+      <meta itemprop="description" content="Salvete, amici!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hoshino's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          在vscode中配置golang开发环境时遇到的小坑
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-10-16 19:14:03 / 修改时间：19:24:11" itemprop="dateCreated datePublished" datetime="2020-10-16T19:14:03+08:00">2020-10-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">编程开发</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/10/16/%E5%9C%A8vscode%E4%B8%AD%E9%85%8D%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%B0%8F%E5%9D%91/" class="post-meta-item leancloud_visitors" data-flag-title="在vscode中配置golang开发环境时遇到的小坑" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 23 篇日志。 继续努力。</span>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/10/16/%E5%9C%A8vscode%E4%B8%AD%E9%85%8D%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%B0%8F%E5%9D%91/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/10/16/%E5%9C%A8vscode%E4%B8%AD%E9%85%8D%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%B0%8F%E5%9D%91/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
+        <p>从官网下载<code>golang</code>的安装包完成安装，并且在vscode里也装好拓展之后还不能正常调试和运行，提示需要补充安装一系列的插件。这时问题来了，无论重试多少次，抑或是在命令行窗口里手动输安装的命令<code>go get xxx</code>，都无一例外地提示错误……</p>
+<p>网上相关教程很多，基本上是要手动到<code>github</code>或者<code>golang</code>官网把插件下载回来，再放好路径配置安装，然而vscode提示有17个插件要装，要是全部手动完成就太难受了……</p>
+<p>认真检查报错信息之后发现，虽然这些插件大多来源于<code>github</code>上的代码仓库，照理说都是可以正常访问的，然而<code>golang</code>在获取插件的时候，默认是从某个带有proxy字样的域名获取，而不幸的是这个域名指向的IP不能访问，于是我想到或许可以换源解决这个问题，搜索到国内的镜像源和相关配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">go env -w GO111MODULE=on</span><br><span class="line">go env -w GOPROXY=https://goproxy.io,direct</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-05T13:51:24+08:00"
-              content="2020-03-05">
-          03-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/03/05/Hoshino%E7%9A%84%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B%E5%9B%9E%E9%A1%BE/" itemprop="url">
-            <span itemprop="name">Hoshino的信息技术学习历程回顾其一</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-05T07:46:12+08:00"
-              content="2020-03-05">
-          03-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/03/05/A-Real-Hello-World/" itemprop="url">
-            <span itemprop="name">来自Hoshino的真正"hello world"！</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-04T23:43:00+08:00"
-              content="2020-03-04">
-          03-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/03/04/Hello-World/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+<p>完成配置重启vscode再尝试安装的时候，所有安装都毫无意外地成功了。解决。</p>
+<p>不过<code>GO111MODULE</code>这个参数貌似会带来一点问题，导致<code>package main</code>也会报错，当前还不明白其中的机制，所以再把参数改回来：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go env -w GO111MODULE=auto</span><br></pre></td></tr></table></figure>
 
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/golang/" rel="tag"># golang</a>
+              <a href="/tags/vscode/" rel="tag"># vscode</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/09/14/%E5%9F%BA%E4%BA%8ESnap%E7%9A%84Nextcloud%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" rel="prev" title="基于Snap的Nextcloud安装与配置">
+      <i class="fa fa-chevron-left"></i> 基于Snap的Nextcloud安装与配置
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
+  
+  
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
