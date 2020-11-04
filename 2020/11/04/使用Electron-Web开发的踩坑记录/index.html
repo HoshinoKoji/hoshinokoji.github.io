@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"knight.abn-team.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="之前在Python的GUI编写上有过一些简单的尝试，后来想到结合FastAPI的后端，自己再写一个前端熟悉一下HTML5&#x2F;CSS&#x2F;JS三件套，又听说Electron是Web套皮做GUI的不错的选择，所以也做了一些尝试，但是遇到了不少的坑。老实说，有些地方的文档实在是写了和没写差不多…… 下面在假定已经完成了Electron的安装，写好了Web页面的基础上，介绍一些经验。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Electron&#x2F;Web开发的踩坑记录">
+<meta property="og:url" content="http://knight.abn-team.top/2020/11/04/%E4%BD%BF%E7%94%A8Electron-Web%E5%BC%80%E5%8F%91%E7%9A%84%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="Hoshino&#39;s Blog">
+<meta property="og:description" content="之前在Python的GUI编写上有过一些简单的尝试，后来想到结合FastAPI的后端，自己再写一个前端熟悉一下HTML5&#x2F;CSS&#x2F;JS三件套，又听说Electron是Web套皮做GUI的不错的选择，所以也做了一些尝试，但是遇到了不少的坑。老实说，有些地方的文档实在是写了和没写差不多…… 下面在假定已经完成了Electron的安装，写好了Web页面的基础上，介绍一些经验。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-04T09:46:53.000Z">
+<meta property="article:modified_time" content="2020-11-04T11:02:57.728Z">
+<meta property="article:author" content="Hoshino">
+<meta property="article:tag" content="Electron">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://knight.abn-team.top/2020/11/04/%E4%BD%BF%E7%94%A8Electron-Web%E5%BC%80%E5%8F%91%E7%9A%84%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>使用Electron/Web开发的踩坑记录 | Hoshino's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hoshino's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">心理学本科在读。对各种事物都怀有兴趣，虽然有大小之分。语言学爱好者。正在学习日语、拉丁语。偶尔有些灵感。</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://knight.abn-team.top/2020/11/04/%E4%BD%BF%E7%94%A8Electron-Web%E5%BC%80%E5%8F%91%E7%9A%84%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hoshino">
+      <meta itemprop="description" content="Salvete, amici!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hoshino's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用Electron/Web开发的踩坑记录
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-11-04 17:46:53 / 修改时间：19:02:57" itemprop="dateCreated datePublished" datetime="2020-11-04T17:46:53+08:00">2020-11-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">开发</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/11/04/%E4%BD%BF%E7%94%A8Electron-Web%E5%BC%80%E5%8F%91%E7%9A%84%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="post-meta-item leancloud_visitors" data-flag-title="使用Electron/Web开发的踩坑记录" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/11/04/%E4%BD%BF%E7%94%A8Electron-Web%E5%BC%80%E5%8F%91%E7%9A%84%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/11/04/%E4%BD%BF%E7%94%A8Electron-Web%E5%BC%80%E5%8F%91%E7%9A%84%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>之前在Python的GUI编写上有过一些简单的尝试，后来想到结合FastAPI的后端，自己再写一个前端熟悉一下HTML5/CSS/JS三件套，又听说Electron是Web套皮做GUI的不错的选择，所以也做了一些尝试，但是遇到了不少的坑。老实说，有些地方的文档实在是写了和没写差不多……</p>
+<p>下面在假定已经完成了Electron的安装，写好了Web页面的基础上，介绍一些经验。</p>
+<a id="more"></a>
+
+<h2 id="基于Napi实现C-和Node-js交互"><a href="#基于Napi实现C-和Node-js交互" class="headerlink" title="基于Napi实现C++和Node.js交互"></a>基于Napi实现C++和Node.js交互</h2><p>最初写好的Web的核心逻辑完全依赖Web上的API，而这一部分我已经写过C++的实现，所以自然地想到在Node.js里调用C++，然后向Web页面提供这部分功能。</p>
+<p>最开始搜到的实现方法是<code>node-ffi</code>，这个模块提供了和C++编写的动态链接库的交互，具体用法和Python的ctypes大同小异，也是注册接口，定义输入参数和返回值的数据类型，做好转换就完成了。遗憾的是，这个模块在2018年就已经停止维护，貌似并不支持新版的Node，不能通过编译，而我也不愿意专门为此倒退版本，于是作罢。</p>
+<p>在这之后，就只有在C++中编写原生接口的办法了。当然这里也有两种选择，一种是直接基于v8，一种是相对简单一些的Napi，我没有时间精力慢慢研究v8的用法，就用了相对简单的Napi。就是在这一步，我被<a href="https://nodejs.github.io/node-addon-api/class_napi_1_1_string.html" target="_blank" rel="noopener">官方文档</a>折磨了很久，还是通过网上各种代码片段才悟出了逻辑。当然也可能是因为我太菜，毕竟确实没有系统学习过C++，都是现查现用。</p>
+<p>下面贴上一小段代码，作为最小可用的简单实现。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;napi.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"crpyt.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">Napi::Buffer&lt;<span class="keyword">char</span>&gt; <span class="title">Encrypt</span><span class="params">(<span class="keyword">const</span> Napi::CallbackInfo&amp; info)</span> </span>&#123;</span><br><span class="line">	Napi::Env env = info.Env(); <span class="comment">//取出上下文</span></span><br><span class="line">	Napi::Buffer&lt;<span class="keyword">char</span>&gt; arr = info[<span class="number">0</span>].As&lt;Napi::Buffer&lt;<span class="keyword">char</span>&gt;&gt;();</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> length = arr.ByteLength();</span><br><span class="line">	<span class="keyword">char</span>* code = encrypt(arr.Data(), length);</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> outlen = <span class="built_in">strlen</span>(code);</span><br><span class="line">	Napi::Buffer&lt;<span class="keyword">char</span>&gt; output = Napi::Buffer&lt;<span class="keyword">char</span>&gt;::New(env, outlen);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">0</span>; i &lt; outlen; i++) output[i] = code[i];</span><br><span class="line">	<span class="built_in">release</span>(code);</span><br><span class="line">	<span class="keyword">return</span> output;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Napi::Object <span class="title">Init</span><span class="params">(Napi::Env env, Napi::Object exports)</span> </span>&#123;</span><br><span class="line">	exports.Set(Napi::<span class="keyword">String</span>::New(env, <span class="string">"encrypt"</span>), Napi::Function::New(env, Encrypt));</span><br><span class="line">	<span class="keyword">return</span> exports;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">NODE_API_MODULE(test, Init)</span><br></pre></td></tr></table></figure>
+
+<p>首先是引入Napi的头文件，这个没什么可说的。</p>
+<p>接下来是Encrypt函数，这里包含了我的核心逻辑，也是要供nodejs调用的方法。这里接受的传入参数<code>info</code>既包含了调用时的上下文，可以通过<code>info.Env()</code>获取，也可以通过索引取出nodejs调用时具体传入的参数。</p>
+<p>传入参数在Napi中的数据类型都是<code>Napi::Value</code>，这是Napi里大部分数据的基类。具体使用时，就涉及类型转换的问题，所有继承自<code>Napi::Value</code>的类都有一个<code>.As&lt;T&gt;()</code>的数据转换方法，可以转换成和JS对应的具体数据类型。在这里，我编写的接口接受的是一段字符串编码成的Buffer，所以转换成<code>Napi::Buffer&lt;char&gt;</code>。这里<code>Napi::Buffer</code>是一个模板类，而我希望按<code>char</code>的方式取值。</p>
+<p>对于这一类数据，可以通过<code>.ByteLength()</code>获取大小，也可以通过<code>.Data()</code>获取包含了数据的指针。其他使用较多的<code>Napi::String</code>也有一些比较简单的用法，比如转成UTF-8编码的char字符串，这里就不作赘述了。</p>
+<p>输出时，自然也要返回特定的nodejs数据类型。在上面的实例代码中，我使用了<code>New(env, size_t length)</code>的方式构建，当然这个方法有很多其他的重载，都可以在文档中一一查到。<strong>注意</strong>：虽然<code>New</code>确实可以直接接受包含数据的指针，但意外的是，构建之后数据似乎并没有复制到新建的类里面，所以在这里我又不得不手动复制了一遍。</p>
+<p>接下来是相对容易解决，不需要改动的地方。<code>Init</code>函数里规定了要导出的方法及其命名，最后再通过<code>NODE_API_MODULE(name, Init)</code>完成导出。</p>
+<p>到这里发现，其实这个过程还是比较顺畅的，我主要是在查找用法的时候遇到了困难。</p>
+<h2 id="模块的编译"><a href="#模块的编译" class="headerlink" title="模块的编译"></a>模块的编译</h2><p>这里是一个大坑，也是我最痛苦的地方。用C++编写完接口之后，就要用<code>node-gyp</code>编译成nodejs中可调用的二进制文件。一般把<code>node-gyp</code>安装为全局模块：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g node-gyp</span><br></pre></td></tr></table></figure>
+
+<p>在Windows上，<code>node-gyp</code>使用时依赖<code>Visual Studio Build Tools</code>和<code>Python</code>，分别用作编译的部分和生成项目文件的部分。注意是否添加了环境变量。</p>
+<p>首先写好编译的配置文件<code>bindings.gyp</code>：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attr">"targets"</span>: [</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="attr">"target_name"</span>:<span class="string">"test"</span>,</span><br><span class="line">		<span class="attr">"sources"</span>:[<span class="string">"source.cpp"</span>],</span><br><span class="line">		<span class="attr">"include_dirs"</span>:[</span><br><span class="line">			<span class="string">"&lt;!@(node -p \"require('node-addon-api').include\")"</span>,</span><br><span class="line">			<span class="string">"C:/MinGW/mingw64/opt/include"</span></span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"conditions"</span>: [</span><br><span class="line">			[<span class="string">"OS=='win'"</span>,</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="attr">"libraries"</span>: [</span><br><span class="line">					'C:/Perl/c/lib/libcrypto.a', </span><br><span class="line">					'C:/Perl/c/lib/libssl.a'</span><br><span class="line">				]</span><br><span class="line">			&#125;]</span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"libraries"</span>: [],</span><br><span class="line">		<span class="attr">"dependencies"</span>:[</span><br><span class="line">		<span class="string">"&lt;!(node -p \"require('node-addon-api').gyp\")"</span></span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"cflags!"</span>:[<span class="string">"-fno-exceptions"</span>],</span><br><span class="line">		<span class="attr">"cflags_cc!"</span>:[<span class="string">"-fno-exceptions"</span>],</span><br><span class="line">		'defines':['NAPI_DISABLE_CPP_EXCEPTIONS']</span><br><span class="line">	&#125;</span><br><span class="line">]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>大部分键值对都是字面意思，别的地方也很容易找到，这里主要讲我自己遇到的问题。我的源码用到了openssl库里的加密算法，而MSBuild使用的编译器默认包含的头文件里并没有openssl，所以我只好在include_dirs里加入了自己安装了<code>MinGW</code>里的头文件目录。另外，openssl使用的时候还会依赖对应的链接库，这也需要手动添加对应的路径。我尝试过添加dll路径，但是编译时无法识别，最后只能添加了Strawberry Perl里的静态链接库<code>libcrypto.a</code>和<code>libssl.a</code>，见示例配置文件的<code>conditions</code>字段。实际上<code>node-gyp</code>编译的时候本身貌似可以调用环境变量中的动态链接库，但是后续重新编译的时候就不行了，这是最困扰我的部分。</p>
+<p>完成后，使用<code>node-gyp</code>生成VS的项目文件并编译：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node-gyp configure rebuild</span><br></pre></td></tr></table></figure>
+
+<p><strong>值得注意的是</strong>，这个MSBuild对编码的支持非常申必，它<strong>识别不了不带BOM的UTF-8源码</strong>，但是编译之后，里面用到的汉字常量又<strong>变成了GBK编码</strong>，令我困惑无比。</p>
+<p>编译完成后，在纯nodejs中很容易引入：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test = <span class="built_in">require</span>(<span class="string">'bindings'</span>)(<span class="string">'test'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(test.Encrypt(buffer))</span><br></pre></td></tr></table></figure>
+
+<h2 id="Electron再编译"><a href="#Electron再编译" class="headerlink" title="Electron再编译"></a>Electron再编译</h2><p>然后问题又来了，虽然在纯nodejs中可以正常运行，但是上面的代码拿到Electron里面运行又会报错。在网上查到，需要用到Electron配套的工具重新编译一遍才能供Electron正常使用。这里用到的模块是<code>electron-rebuild</code>，安装方法类似，使用时要执行目录下的二进制文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./node_modules/.bin/electron-rebuild.cmd</span><br></pre></td></tr></table></figure>
+
+<p>可以看到，这里不需要额外的参数。上面提到的链接库的问题其实也主要是在这一步遇到的。</p>
+<p>完成编译之后，就可以在Electron内正常调用了。</p>
+<h2 id="Electron跨进程通信极简用法"><a href="#Electron跨进程通信极简用法" class="headerlink" title="Electron跨进程通信极简用法"></a>Electron跨进程通信极简用法</h2><p>最后再简单讲讲Electron主进程和渲染进程的交互。在最开始的地方我已经提到，我所做的的工作是要把处理信息的核心逻辑移到nodejs中，通过调用C++模块的方式实现，这里就涉及到了<code>ipc</code>的一些基本用法。</p>
+<p>首先，在Web页面的js文件中引入<code>ipc</code>模块：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ipc = <span class="built_in">require</span>(<span class="string">'electron'</span>).ipcRenderer</span><br></pre></td></tr></table></figure>
+
+<p>发送信息也非常简单：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//send(name, data)</span></span><br><span class="line">ipc.send(<span class="string">'renderer-request'</span>, &#123;<span class="string">'msg'</span>: <span class="string">'test'</span>, <span class="string">'en'</span>: <span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>在主进程中要引入另一个对应的模块，使用时监听对应信道：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ipc = <span class="built_in">require</span>(<span class="string">'electron'</span>).ipcMain</span><br><span class="line">ipc.on(<span class="string">'renderer-request'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event, arg</span>) </span>&#123;</span><br><span class="line">    event.sender.send(<span class="string">'renderer-response'</span>, &#123;<span class="string">'msg'</span>: <span class="string">'ok'</span>&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意在向渲染进程传回信息时，可以通过<code>event.sender</code>原路返回对应的进程。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Electron/" rel="tag"># Electron</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/16/%E5%9C%A8vscode%E4%B8%AD%E9%85%8D%E7%BD%AEgolang%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E5%B0%8F%E5%9D%91/" rel="prev" title="在vscode中配置golang开发环境时遇到的小坑">
+      <i class="fa fa-chevron-left"></i> 在vscode中配置golang开发环境时遇到的小坑
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于Napi实现C-和Node-js交互"><span class="nav-number">1.</span> <span class="nav-text">基于Napi实现C++和Node.js交互</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块的编译"><span class="nav-number">2.</span> <span class="nav-text">模块的编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Electron再编译"><span class="nav-number">3.</span> <span class="nav-text">Electron再编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Electron跨进程通信极简用法"><span class="nav-number">4.</span> <span class="nav-text">Electron跨进程通信极简用法</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div style="overflow: hidden;">
+      <div class="site-overview-wrap sidebar-panel" style="overflow-x: hidden; overflow-y: scroll; width: calc(100% + 17px);">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Hoshino"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Hoshino</p>
+  <div class="site-description" itemprop="description">Salvete, amici!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/hoshinokoji" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;hoshinokoji" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:hoshino_koji@163.com" title="E-Mail → mailto:hoshino_koji@163.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://knight.abn-team.top/" title="http:&#x2F;&#x2F;knight.abn-team.top">knight的博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ydjsir.com.cn/" title="https:&#x2F;&#x2F;ydjsir.com.cn" rel="noopener" target="_blank">ydjsir的博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://toyomu.abn-team.top/" title="http:&#x2F;&#x2F;toyomu.abn-team.top&#x2F;" rel="noopener" target="_blank">toyomu的博客</a>
+        </li>
+    </ul>
+  </div>
+      </div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hoshino</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'jQRMt1Bylj51DEpktNVJ4BBj-gzGzoHsz',
+      appKey     : 'Pn6DG2GDwvL4wr7wwM2Ouv4f',
+      placeholder: "欢迎评论留言呀！",
+      avatar     : 'robohash',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
