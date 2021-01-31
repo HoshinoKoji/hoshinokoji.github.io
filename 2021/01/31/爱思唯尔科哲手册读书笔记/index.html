@@ -20,20 +20,21 @@
     var CONFIG = {"hostname":"knight.abn-team.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="使用Numpy的时候经常涉及大量数据的反复使用，需要存储。我没有专门查文档，直接通过Tab自动补全找到了save和load，基本用法也很简单。 numpy.save对于基本使用来说，numpy.save只需要处理两个参数：文件名、变量，如： 1234import numpydata &#x3D; numpy.zeros([5, 5])numpy.save(&#39;data&#39;, arr &#x3D; data)  虽然参数写">
+  <meta name="description" content="前言最近想到应该大致了解科学哲学的讨论内容，至少得到系统一些的认识，找到了风评还不错的爱思唯尔科学哲学手册，原名Handbook of the Philosophy of Science，全书按学科分出了诸多册，每一册都是大部头，我水平和精力又实在有限，所以先挑出General的部分看一看，以期留个印象，有时间再看心理学分册和其他分册。 在某群水群学术讨论的时候聊起科哲，发现大家或多或少有些了解，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Numpy数据存储用法记录">
-<meta property="og:url" content="http://knight.abn-team.top/2020/07/31/Numpy%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:title" content="爱思唯尔科哲手册读书笔记">
+<meta property="og:url" content="http://knight.abn-team.top/2021/01/31/%E7%88%B1%E6%80%9D%E5%94%AF%E5%B0%94%E7%A7%91%E5%93%B2%E6%89%8B%E5%86%8C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hoshino&#39;s Blog">
-<meta property="og:description" content="使用Numpy的时候经常涉及大量数据的反复使用，需要存储。我没有专门查文档，直接通过Tab自动补全找到了save和load，基本用法也很简单。 numpy.save对于基本使用来说，numpy.save只需要处理两个参数：文件名、变量，如： 1234import numpydata &#x3D; numpy.zeros([5, 5])numpy.save(&#39;data&#39;, arr &#x3D; data)  虽然参数写">
+<meta property="og:description" content="前言最近想到应该大致了解科学哲学的讨论内容，至少得到系统一些的认识，找到了风评还不错的爱思唯尔科学哲学手册，原名Handbook of the Philosophy of Science，全书按学科分出了诸多册，每一册都是大部头，我水平和精力又实在有限，所以先挑出General的部分看一看，以期留个印象，有时间再看心理学分册和其他分册。 在某群水群学术讨论的时候聊起科哲，发现大家或多或少有些了解，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-07-31T04:56:12.000Z">
-<meta property="article:modified_time" content="2020-07-31T05:17:22.115Z">
+<meta property="article:published_time" content="2021-01-31T04:59:59.000Z">
+<meta property="article:modified_time" content="2021-01-31T08:25:45.182Z">
 <meta property="article:author" content="Hoshino">
-<meta property="article:tag" content="Numpy">
+<meta property="article:tag" content="科学哲学">
+<meta property="article:tag" content="读书笔记">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://knight.abn-team.top/2020/07/31/Numpy%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/">
+<link rel="canonical" href="http://knight.abn-team.top/2021/01/31/%E7%88%B1%E6%80%9D%E5%94%AF%E5%B0%94%E7%A7%91%E5%93%B2%E6%89%8B%E5%86%8C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
 
 
 <script id="page-configurations">
@@ -46,7 +47,7 @@
   };
 </script>
 
-  <title>Numpy数据存储用法记录 | Hoshino's Blog</title>
+  <title>爱思唯尔科哲手册读书笔记 | Hoshino's Blog</title>
   
 
 
@@ -162,7 +163,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://knight.abn-team.top/2020/07/31/Numpy%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/">
+    <link itemprop="mainEntityOfPage" href="http://knight.abn-team.top/2021/01/31/%E7%88%B1%E6%80%9D%E5%94%AF%E5%B0%94%E7%A7%91%E5%93%B2%E6%89%8B%E5%86%8C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -175,7 +176,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Numpy数据存储用法记录
+          爱思唯尔科哲手册读书笔记
         </h1>
 
         <div class="post-meta">
@@ -186,7 +187,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-07-31 12:56:12 / 修改时间：13:17:22" itemprop="dateCreated datePublished" datetime="2020-07-31T12:56:12+08:00">2020-07-31</time>
+              <time title="创建时间：2021-01-31 12:59:59 / 修改时间：16:25:45" itemprop="dateCreated datePublished" datetime="2021-01-31T12:59:59+08:00">2021-01-31</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -194,12 +195,12 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                  <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
                 </span>
             </span>
 
           
-            <span id="/2020/07/31/Numpy%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/" class="post-meta-item leancloud_visitors" data-flag-title="Numpy数据存储用法记录" title="阅读次数">
+            <span id="/2021/01/31/%E7%88%B1%E6%80%9D%E5%94%AF%E5%B0%94%E7%A7%91%E5%93%B2%E6%89%8B%E5%86%8C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-meta-item leancloud_visitors" data-flag-title="爱思唯尔科哲手册读书笔记" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -214,8 +215,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/07/31/Numpy%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/07/31/Numpy%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%94%A8%E6%B3%95%E8%AE%B0%E5%BD%95/" itemprop="commentCount"></span>
+    <a title="valine" href="/2021/01/31/%E7%88%B1%E6%80%9D%E5%94%AF%E5%B0%94%E7%A7%91%E5%93%B2%E6%89%8B%E5%86%8C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/31/%E7%88%B1%E6%80%9D%E5%94%AF%E5%B0%94%E7%A7%91%E5%93%B2%E6%89%8B%E5%86%8C%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -230,19 +231,49 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>使用Numpy的时候经常涉及大量数据的反复使用，需要存储。我没有专门查文档，直接通过Tab自动补全找到了save和load，基本用法也很简单。</p>
-<h2 id="numpy-save"><a href="#numpy-save" class="headerlink" title="numpy.save"></a>numpy.save</h2><p>对于基本使用来说，<code>numpy.save</code>只需要处理两个参数：文件名、变量，如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"></span><br><span class="line">data = numpy.zeros([<span class="number">5</span>, <span class="number">5</span>])</span><br><span class="line">numpy.save(<span class="string">'data'</span>, arr = data)</span><br></pre></td></tr></table></figure>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近想到应该大致了解科学哲学的讨论内容，至少得到系统一些的认识，找到了风评还不错的<code>爱思唯尔科学哲学手册</code>，原名<em>Handbook of the Philosophy of Science</em>，全书按学科分出了诸多册，每一册都是大部头，我水平和精力又实在有限，所以先挑出General的部分看一看，以期留个印象，有时间再看心理学分册和其他分册。</p>
+<p>在某群<del>水群</del>学术讨论的时候聊起科哲，发现大家或多或少有些了解，但也不深入。也有人指出，科哲对于实际研究帮助不大。这是可以理解的。在当前的科学实践中，光是追随范式独自完成一项实证研究都已非寻常事，比起傍晚的沉思，还是技术来得实在。但我也相信，如果真想搞出点大新闻，终归要更高瞻远瞩一些，而不是只有眼前的细枝末节。抽些时间对科学哲学做一些严肃的思考，还是“有用的”。而且“没用”又如何？<code>有用</code>本身就是一种价值上的预设。</p>
+<p>对心理学来说，我认为科哲的意义更是不言而喻。上完一学期的心理学史，我姑且算是明白了前人的目标，这自然是收获；但麻烦的是，对这门学科在当代发展的目标又感到困惑了，当然这种困惑也算是一种收获。尽管对现状维持最低程度的认可很必要，但认知失衡还是迫使我寻求更好的答案。</p>
+<p>笔记可能以提纲式的条目为主，必要时附上一些思考。</p>
+<a id="more"></a>
 
-<p>虽然参数写的是<code>&#39;data&#39;</code>，但是实际上会保存成<code>data.npy</code>。</p>
-<p>此外还有<code>numpy.savez</code>，推测是使用gzip压缩。</p>
-<h2 id="numpy-load"><a href="#numpy-load" class="headerlink" title="numpy.load"></a>numpy.load</h2><p><code>numpy.load</code>的基本用法也比较简单，不过比<code>numpy.save</code>稍微多一点坑。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line">data = numpy.load(<span class="string">'data.npy'</span>)</span><br></pre></td></tr></table></figure>
-
-<p>注意，<code>numpy.save</code>会自动加上.npy的扩展名，但是<code>numpy.load</code>要写上完整文件名。对于用纯numpy的数据结构保存的文件，用上述语句就足够了。但是如果使用了<code>list</code>，<code>dict</code>这样的数据结构，就要多加一点内容：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data = numpy.load(<span class="string">'data.npy'</span>, allow_pickle = <span class="literal">True</span>).item()</span><br></pre></td></tr></table></figure>
-
-<p>通过这一语句，就可以顺利提取非numpy数据结构保存的内容。</p>
+<h1 id="Laws-Theories-and-Research-Programs"><a href="#Laws-Theories-and-Research-Programs" class="headerlink" title="Laws, Theories, and Research Programs"></a>Laws, Theories, and Research Programs</h1><p>Keyword(s): Law-distinction</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ul>
+<li>Empirical theories can be described as traditionally (a)sets of statements, or sets of models, which are the specification of classes of set-theoretic structures satisfying certain conditions.</li>
+<li>The history of law-distinction:<ol>
+<li>Classical logical empiricists. The point of departure is theory-frfee vocabulary.</li>
+<li>Meaning holism. All terms occurring in a theory are laden with theory.</li>
+<li>Nagel, Hempel, and Sneed. Some may be laden, while some may not, moving from two-level, short-term dynamics to a multi-level, long-term dynamics of the development, where proper theories become observational law with a new higher proper theory.</li>
+</ol>
+</li>
+</ul>
+<h2 id="Examples-and-prima-facie-characteristics"><a href="#Examples-and-prima-facie-characteristics" class="headerlink" title="Examples and prima facie characteristics"></a>Examples and prima facie characteristics</h2><p>Examples of proper theories:</p>
+<ul>
+<li>Newton’s theory of graviation</li>
+<li>Dalton’s theory of the atom</li>
+<li>Mendel’s theory of genetics</li>
+<li>Festinger’s theory of cognitive dissonance</li>
+<li>Rational-choice theory</li>
+<li>….</li>
+</ul>
+<p>Examples of observational laws:</p>
+<ul>
+<li>Falling objects near the earth have constant acceleration, or Galilei’s law of free falling.</li>
+<li>Chemical compounds always decompose into component substances with constant weight ratios.</li>
+<li>When people have made a decision there is active seeking out of information which is consistent with the action taken.</li>
+<li>….</li>
+</ul>
+<p>Characteristics of observational laws and theories, or their differences:</p>
+<ul>
+<li>Wheras an observational law is usually represented as one, possibly complex, statement, a theory is usually presented as a system, a coherent set, of statements.</li>
+<li>An observational law may specify what will happen under certain experimental conditions, while a theory may be stronger.</li>
+</ul>
+<p>Differences above do not well distinct laws and theories, howerver.</p>
+<ul>
+<li>Theories introduce new concepts, called “the theoretical terms”, that do not occur in laws.</li>
+<li>Although laws can be explained by theories, they are relatively indepedent. That is, a law can be tested independently, and one law can be explained by multiple theories.</li>
+</ul>
+<p>As suggested, opposed to the classical logical empiricist point of view, the last two differences may serve as conditions of adequacy.</p>
 
     </div>
 
@@ -252,7 +283,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Numpy/" rel="tag"># Numpy</a>
+              <a href="/tags/%E7%A7%91%E5%AD%A6%E5%93%B2%E5%AD%A6/" rel="tag"># 科学哲学</a>
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"># 读书笔记</a>
           </div>
 
         
@@ -261,13 +293,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/07/04/%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0-%E9%98%85%E8%AF%BB%E9%9A%9C%E7%A2%8D%E4%B8%8EADHD%E5%85%B1%E6%82%A3%E9%97%AE%E9%A2%98%E7%9A%84VBM%E5%85%83%E5%88%86%E6%9E%90/" rel="prev" title="阅读障碍与ADHD共患问题的VBM元分析">
-      <i class="fa fa-chevron-left"></i> 阅读障碍与ADHD共患问题的VBM元分析
+    <a href="/2021/01/01/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93-%E6%96%B0%E5%B9%B4%E5%B1%95%E6%9C%9B/" rel="prev" title="2020年终总结 & 新年展望">
+      <i class="fa fa-chevron-left"></i> 2020年终总结 & 新年展望
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/09/14/%E5%9F%BA%E4%BA%8ESnap%E7%9A%84Nextcloud%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/" rel="next" title="基于Snap的Nextcloud安装与配置">
-      基于Snap的Nextcloud安装与配置 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -327,7 +356,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#numpy-save"><span class="nav-number">1.</span> <span class="nav-text">numpy.save</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#numpy-load"><span class="nav-number">2.</span> <span class="nav-text">numpy.load</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Laws-Theories-and-Research-Programs"><span class="nav-number">2.</span> <span class="nav-text">Laws, Theories, and Research Programs</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">2.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Examples-and-prima-facie-characteristics"><span class="nav-number">2.2.</span> <span class="nav-text">Examples and prima facie characteristics</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
