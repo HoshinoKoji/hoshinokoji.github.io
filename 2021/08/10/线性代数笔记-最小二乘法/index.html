@@ -40,7 +40,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: true,
-  postUpdate: '2022-10-23 17:21:20'
+  postUpdate: '2022-10-23 23:55:54'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -130,30 +130,30 @@
     }
     detectApple()
     })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hoshino's Blog" type="application/atom+xml">
-</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/basic/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 范畴</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/cover/1628350351952-Proj.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hoshino's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 范畴</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">线性代数笔记 - 最小二乘法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-10T08:31:00.000Z" title="发表于 2021-08-10 16:31:00">2021-08-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-23T09:21:20.441Z" title="更新于 2022-10-23 17:21:20">2022-10-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="leancloud_visitors" id="/2021/08/10/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%94%E8%AE%B0-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/" data-flag-title="线性代数笔记 - 最小二乘法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span class="leancloud-visitors-count"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>在投影之后接到最小二乘法。过了一段时间已经忘记了章节编排了，所以看到最小二乘接在投影后面吓了一跳，仔细看看才恍然大悟，于是又把自己观念上相隔很远的两个概念联系到一起了，可喜可贺。</p>
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/basic/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 范畴</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://hoshino-public1.oss-cn-beijing.aliyuncs.com/assets/cover/1628350351952-Proj.svg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hoshino's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 范畴</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">线性代数笔记 - 最小二乘法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-08-10T08:31:00.000Z" title="发表于 2021-08-10 16:31:00">2021-08-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-23T15:55:54.269Z" title="更新于 2022-10-23 23:55:54">2022-10-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="leancloud_visitors" id="/2021/08/10/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%94%E8%AE%B0-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/" data-flag-title="线性代数笔记 - 最小二乘法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span class="leancloud-visitors-count"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>在投影之后接到最小二乘法。过了一段时间已经忘记了章节编排了，所以看到最小二乘接在投影后面吓了一跳，仔细看看才恍然大悟，于是又把自己观念上相隔很远的两个概念联系到一起了，可喜可贺。</p>
 <h2 id="最小二乘的动机">最小二乘的动机</h2>
 <p>在中学课本，最小二乘通常作为<strong>寻找一条直线以最好地拟合若干采样点</strong>这类问题的解决方案出现。在Strang的书中，这一问题同样被用作重要的例子，但是书中也提供了更一般的抽象：对于关于 $\mathbf{x}$ 的方程 $\mathbf{Ax = b}$ 而言，由于种种原因，如有效方程数大于变元个数，我们无法得到完美的解。因此，我们转而允许引入一定的误差，寻求相对最优的解，使得误差最小。在这一情形下，我们用误差的范数 $\Vert\mathbf{Ax - b}\Vert$ ​来衡量误差大小。举一例来自原书的拟合直线问题。</p>
 <p><strong>问题</strong>：找到一条直线 $y = c_0 + c_1x$​，使之距离点 $(0, 6)$​，$(1, 0)$ ​和 $(2, 0)$ ​最近。</p>
 <p><strong>分析</strong>：假定我们希望找到一条完美的直线，那么将数据代入直线方程，我们得到<br>
 $$<br>
 \begin{align}<br>
-6 &amp; = c_0 + 0\cdot c_1 \<br>
-0 &amp; = c_0 + 1\cdot c_1 \<br>
+6 &amp; = c_0 + 0\cdot c_1 \\<br>
+0 &amp; = c_0 + 1\cdot c_1 \\<br>
 0 &amp; = c_0 + 2\cdot c_1<br>
 \end{align}<br>
 $$</p>
 <p>写成矩阵和向量的形式，我们同样能得到 $\mathbf{Ax = b}$ ​的形式，其中<br>
 $$<br>
 \mathbf{A} = \begin{bmatrix}<br>
-1 &amp; 0 \<br>
-1 &amp; 1 \<br>
+1 &amp; 0 \\<br>
+1 &amp; 1 \\<br>
 1 &amp; 2<br>
 \end{bmatrix},\ \mathbf{x} = \begin{bmatrix}<br>
-c_0 \<br>
+c_0 \\<br>
 c_1<br>
 \end{bmatrix},\ \mathbf{b} = \begin{bmatrix}<br>
-6 \<br>
-0 \<br>
+6 \\<br>
+0 \\<br>
 0<br>
 \end{bmatrix}.<br>
 $$</p>
@@ -170,7 +170,7 @@ $$<br>
 \begin{align}<br>
 \Vert\mathbf{Ax’ - b}\Vert &amp; = \Vert\mathbf{A(x’ - x) - e}\Vert \<br>
 &amp; = \Vert\mathbf{A(x’ - x)}\Vert - 2\mathbf{(x’ - x)}^{\rm T}\mathbf{A}^{\rm T}\mathbf{e} +<br>
-\Vert\mathbf{e}\Vert \<br>
+\Vert\mathbf{e}\Vert \\<br>
 &amp; = \Vert\mathbf{A(x’ - x)}\Vert + \Vert\mathbf{e}\Vert \ge \Vert\mathbf{e}\Vert<br>
 \end{align}<br>
 $$</p>
@@ -181,13 +181,13 @@ $$</p>
 <p>对于简单的非线性拟合，如 $n$ 次多项式，各项的计算包括了非线性的 $x^k$ ，但是各项的组合依然是线性的，因为 $y = \sum{c_i x^i}$ 。所以在求解最优的系数时，我们只需根据多项式的次数对 $\mathbf{A}$ ​​的写法稍加调整。比如抛物线的拟合：<br>
 $$<br>
 \mathbf{A} = \begin{bmatrix}<br>
-1 &amp; x_1 &amp; x_1^2 \<br>
-1 &amp; x_2 &amp; x_2^2 \<br>
-\vdots &amp; \vdots &amp; \vdots \<br>
+1 &amp; x_1 &amp; x_1^2 \\<br>
+1 &amp; x_2 &amp; x_2^2 \\<br>
+\vdots &amp; \vdots &amp; \vdots \\<br>
 1 &amp; x_3 &amp; x_3^2<br>
 \end{bmatrix},\ \mathbf{x} = \begin{bmatrix}<br>
-c_0 \<br>
-c_1 \<br>
+c_0 \\<br>
+c_1 \\<br>
 c_2<br>
 \end{bmatrix}.<br>
 $$</p>
