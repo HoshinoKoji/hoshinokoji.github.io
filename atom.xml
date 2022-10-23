@@ -75,7 +75,7 @@
     <link href="https://blog.hoshino.club/2021/08/10/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%94%E8%AE%B0-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/"/>
     <id>https://blog.hoshino.club/2021/08/10/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%94%E8%AE%B0-%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/</id>
     <published>2021-08-10T08:31:00.000Z</published>
-    <updated>2022-10-23T16:01:44.318Z</updated>
+    <updated>2022-10-23T16:23:06.483Z</updated>
     
     
     <summary type="html">线性代数学习的整理和思考。包括最小二乘的动机、与投影的关系和延伸。</summary>
@@ -406,9 +406,9 @@
     <category term="Python" scheme="https://blog.hoshino.club/categories/Python/"/>
     
     
-    <category term="PyQ5" scheme="https://blog.hoshino.club/tags/PyQ5/"/>
-    
     <category term="Python" scheme="https://blog.hoshino.club/tags/Python/"/>
+    
+    <category term="PyQ5" scheme="https://blog.hoshino.club/tags/PyQ5/"/>
     
     <category term="GUI" scheme="https://blog.hoshino.club/tags/GUI/"/>
     
