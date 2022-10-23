@@ -199,7 +199,6 @@
     
     
     <summary type="html">&lt;p&gt;文献笔记的记录和收集。&lt;/p&gt;
-&lt;div class=&quot;table-container&quot;&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -213,8 +212,7 @@
 &lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://doi.org/10.1186/s11689-019-9287-8&quot;&gt;https://doi.org/10.1186/s11689-019-9287-8&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;</summary>
+&lt;/table&gt;</summary>
     
     
     
@@ -398,7 +396,8 @@
     <updated>2021-07-12T03:45:17.601Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;PyQt5可以说是Python中比较重要，也比较热门的GUI模块，依托Qt的实力而具有丰富的积累。就我目前的了解来看，和Python自带的GUI模块Tkinter相比，PyQt的重要优势是附带的图形界面工具Designer可以帮助开发者高效建立图形界面，以及更丰富的部件和信号发送-处理机制。综合起来，使用体验和Tkinter相比是要好很多的。&lt;/p&gt;
+    <summary type="html">&lt;h1&gt;前言&lt;/h1&gt;
+&lt;p&gt;PyQt5可以说是Python中比较重要，也比较热门的GUI模块，依托Qt的实力而具有丰富的积累。就我目前的了解来看，和Python自带的GUI模块Tkinter相比，PyQt的重要优势是附带的图形界面工具Designer可以帮助开发者高效建立图形界面，以及更丰富的部件和信号发送-处理机制。综合起来，使用体验和Tkinter相比是要好很多的。&lt;/p&gt;
 &lt;p&gt;当然，网上关于PyQt的教程已经很多了，我暂时还是在短暂地接触上手的阶段，没有原创的经验。这里摘录一些比较基础、常用的使用示例，我个人遇到的一些问题，以及对应的解决方案。因为来源太多，很难一一记录，这里声明，除有特别说明的以外，本文的示例代码和解决方案都并非原创。&lt;/p&gt;</summary>
     
     
