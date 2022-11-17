@@ -6,7 +6,7 @@
   <link href="https://hoshino.club/atom.xml" rel="self"/>
   
   <link href="https://hoshino.club/"/>
-  <updated>2022-10-24T08:18:57.062Z</updated>
+  <updated>2022-11-17T08:15:22.705Z</updated>
   <id>https://hoshino.club/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>音泉广播下载方法探索</title>
+    <link href="https://hoshino.club/2022/11/16/%E9%9F%B3%E6%B3%89%E5%B9%BF%E6%92%AD%E4%B8%8B%E8%BD%BD%E6%96%B9%E6%B3%95%E6%8E%A2%E7%B4%A2/"/>
+    <id>https://hoshino.club/2022/11/16/%E9%9F%B3%E6%B3%89%E5%B9%BF%E6%92%AD%E4%B8%8B%E8%BD%BD%E6%96%B9%E6%B3%95%E6%8E%A2%E7%B4%A2/</id>
+    <published>2022-11-16T14:10:33.000Z</published>
+    <updated>2022-11-17T08:15:22.705Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://hoshino.club/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="广播" scheme="https://hoshino.club/tags/%E5%B9%BF%E6%92%AD/"/>
+    
+    <category term="音泉" scheme="https://hoshino.club/tags/%E9%9F%B3%E6%B3%89/"/>
+    
+    <category term="流媒体" scheme="https://hoshino.club/tags/%E6%B5%81%E5%AA%92%E4%BD%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PsychoPy与JavaScript与线上实验</title>
+    <link href="https://hoshino.club/2022/11/15/PsychoPy%E4%B8%8EJavaScript%E4%B8%8E%E7%BA%BF%E4%B8%8A%E5%AE%9E%E9%AA%8C/"/>
+    <id>https://hoshino.club/2022/11/15/PsychoPy%E4%B8%8EJavaScript%E4%B8%8E%E7%BA%BF%E4%B8%8A%E5%AE%9E%E9%AA%8C/</id>
+    <published>2022-11-15T15:33:56.000Z</published>
+    <updated>2022-11-17T08:35:47.688Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://hoshino.club/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="Python" scheme="https://hoshino.club/tags/Python/"/>
+    
+    <category term="PsychoPy" scheme="https://hoshino.club/tags/PsychoPy/"/>
+    
+  </entry>
   
   <entry>
     <title>文献评述-多媒体学习材料的配图</title>
@@ -251,7 +307,7 @@
     <link href="https://hoshino.club/2020/06/03/Hoshino-s-BGM/"/>
     <id>https://hoshino.club/2020/06/03/Hoshino-s-BGM/</id>
     <published>2020-06-03T03:25:57.000Z</published>
-    <updated>2022-10-23T14:33:25.168Z</updated>
+    <updated>2022-11-17T08:30:08.085Z</updated>
     
     
     <summary type="html">一些不算BGM的BGMM。</summary>
@@ -279,9 +335,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-    
     <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
+    
+    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
   </entry>
   
@@ -300,9 +356,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-    
     <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
+    
+    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
   </entry>
   
@@ -340,9 +396,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-    
     <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
+    
+    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
   </entry>
   
@@ -382,9 +438,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-    
     <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
+    
+    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
   </entry>
   
@@ -403,9 +459,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-    
     <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
+    
+    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
   </entry>
   
@@ -426,57 +482,11 @@
     <category term="Python" scheme="https://hoshino.club/categories/Python/"/>
     
     
-    <category term="PyQ5" scheme="https://hoshino.club/tags/PyQ5/"/>
-    
     <category term="Python" scheme="https://hoshino.club/tags/Python/"/>
     
+    <category term="PyQ5" scheme="https://hoshino.club/tags/PyQ5/"/>
+    
     <category term="GUI" scheme="https://hoshino.club/tags/GUI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>文化人类学与心理学的冲突：对比、反思和展望</title>
-    <link href="https://hoshino.club/2020/03/06/%E6%96%87%E5%8C%96%E4%BA%BA%E7%B1%BB%E5%AD%A6%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6%E7%9A%84%E5%86%B2%E7%AA%81-%E5%AF%B9%E6%AF%94%E3%80%81%E5%8F%8D%E6%80%9D%E5%92%8C%E5%B1%95%E6%9C%9B/"/>
-    <id>https://hoshino.club/2020/03/06/%E6%96%87%E5%8C%96%E4%BA%BA%E7%B1%BB%E5%AD%A6%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6%E7%9A%84%E5%86%B2%E7%AA%81-%E5%AF%B9%E6%AF%94%E3%80%81%E5%8F%8D%E6%80%9D%E5%92%8C%E5%B1%95%E6%9C%9B/</id>
-    <published>2020-03-06T13:38:14.000Z</published>
-    <updated>2021-07-04T10:58:44.940Z</updated>
-    
-    
-    <summary type="html">摘要：在研究对象上具有共同基础的文化人类学和心理学在学科史上曾经有重要的交流对话，但在两者的发展历程中逐渐因理论构建和方法差异而形成了以冲突为主的关系。本文大致梳理了文化人类学视角下对心理学的批判，以及心理学视角下对文化人类学的批判，指出了其中合理和不合理的成分，并以研究对象为切入点提出文化人类学的知识体系在根本上应当以心理学为基础。然而，由于两者的研究层次不同，文化人类学和心理学在各自的研究领域上均有其合理性。为实现两者之间的对接，应当及时重视心理人类学、跨文化心理学等交叉学科对理论连接处的建设，以促进文化人类学和心理学的理论建构和良性发展。</summary>
-    
-    
-    
-    <category term="非正式论文" scheme="https://hoshino.club/categories/%E9%9D%9E%E6%AD%A3%E5%BC%8F%E8%AE%BA%E6%96%87/"/>
-    
-    
-    <category term="心理学" scheme="https://hoshino.club/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-    
-    <category term="人类学" scheme="https://hoshino.club/tags/%E4%BA%BA%E7%B1%BB%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hoshino的信息技术学习历程回顾其一</title>
-    <link href="https://hoshino.club/2020/03/05/Hoshino%E7%9A%84%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B%E5%9B%9E%E9%A1%BE/"/>
-    <id>https://hoshino.club/2020/03/05/Hoshino%E7%9A%84%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B%E5%9B%9E%E9%A1%BE/</id>
-    <published>2020-03-05T05:51:24.000Z</published>
-    <updated>2021-07-10T07:44:59.560Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="杂谈" scheme="https://hoshino.club/categories/%E6%9D%82%E8%B0%88/"/>
-    
-    
-    <category term="回忆" scheme="https://hoshino.club/tags/%E5%9B%9E%E5%BF%86/"/>
     
   </entry>
   
