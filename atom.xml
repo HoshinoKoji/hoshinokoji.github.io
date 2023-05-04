@@ -6,7 +6,7 @@
   <link href="https://hoshino.club/atom.xml" rel="self"/>
   
   <link href="https://hoshino.club/"/>
-  <updated>2022-11-17T08:15:22.705Z</updated>
+  <updated>2023-05-04T09:05:43.948Z</updated>
   <id>https://hoshino.club/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>论「青春コンプレックス」为何不宜译作《青春症候群》</title>
+    <link href="https://hoshino.club/2023/05/03/%E8%AE%BA%E3%80%8C%E9%9D%92%E6%98%A5%E3%82%B3%E3%83%B3%E3%83%97%E3%83%AC%E3%83%83%E3%82%AF%E3%82%B9%E3%80%8D%E4%B8%BA%E4%BD%95%E4%B8%8D%E5%AE%9C%E8%AF%91%E4%BD%9C%E3%80%8A%E9%9D%92%E6%98%A5%E7%97%87%E5%80%99%E7%BE%A4%E3%80%8B/"/>
+    <id>https://hoshino.club/2023/05/03/%E8%AE%BA%E3%80%8C%E9%9D%92%E6%98%A5%E3%82%B3%E3%83%B3%E3%83%97%E3%83%AC%E3%83%83%E3%82%AF%E3%82%B9%E3%80%8D%E4%B8%BA%E4%BD%95%E4%B8%8D%E5%AE%9C%E8%AF%91%E4%BD%9C%E3%80%8A%E9%9D%92%E6%98%A5%E7%97%87%E5%80%99%E7%BE%A4%E3%80%8B/</id>
+    <published>2023-05-03T13:45:45.000Z</published>
+    <updated>2023-05-04T09:05:43.948Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="杂谈" scheme="https://hoshino.club/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="孤独摇滚" scheme="https://hoshino.club/tags/%E5%AD%A4%E7%8B%AC%E6%91%87%E6%BB%9A/"/>
+    
+  </entry>
   
   <entry>
     <title>音泉广播下载方法探索</title>
@@ -276,6 +301,7 @@
     
     
     <summary type="html">&lt;p&gt;文献笔记的记录和收集。&lt;/p&gt;
+&lt;div class=&quot;table-container&quot;&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -289,7 +315,8 @@
 &lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://doi.org/10.1186/s11689-019-9287-8&quot;&gt;https://doi.org/10.1186/s11689-019-9287-8&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</summary>
+&lt;/table&gt;
+&lt;/div&gt;</summary>
     
     
     
@@ -307,10 +334,10 @@
     <link href="https://hoshino.club/2020/06/03/Hoshino-s-BGM/"/>
     <id>https://hoshino.club/2020/06/03/Hoshino-s-BGM/</id>
     <published>2020-06-03T03:25:57.000Z</published>
-    <updated>2022-11-17T08:30:08.085Z</updated>
+    <updated>2023-05-04T09:06:22.677Z</updated>
     
     
-    <summary type="html">一些不算BGM的BGMM。</summary>
+    <summary type="html">一些不算BGM的BGM。</summary>
     
     
     
@@ -335,9 +362,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
-    
     <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
     
   </entry>
   
@@ -356,9 +383,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
-    
     <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
     
   </entry>
   
@@ -396,9 +423,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
-    
     <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
     
   </entry>
   
@@ -438,9 +465,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
-    
     <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
     
   </entry>
   
@@ -459,34 +486,9 @@
     <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
     
-    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
-    
     <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
-  </entry>
-  
-  <entry>
-    <title>PyQt5基本用法&amp;注意事项小结</title>
-    <link href="https://hoshino.club/2020/03/25/PyQt5%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%B0%8F%E7%BB%93/"/>
-    <id>https://hoshino.club/2020/03/25/PyQt5%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%B0%8F%E7%BB%93/</id>
-    <published>2020-03-25T13:48:20.000Z</published>
-    <updated>2021-07-12T03:45:17.601Z</updated>
-    
-    
-    <summary type="html">&lt;h1&gt;前言&lt;/h1&gt;
-&lt;p&gt;PyQt5可以说是Python中比较重要，也比较热门的GUI模块，依托Qt的实力而具有丰富的积累。就我目前的了解来看，和Python自带的GUI模块Tkinter相比，PyQt的重要优势是附带的图形界面工具Designer可以帮助开发者高效建立图形界面，以及更丰富的部件和信号发送-处理机制。综合起来，使用体验和Tkinter相比是要好很多的。&lt;/p&gt;
-&lt;p&gt;当然，网上关于PyQt的教程已经很多了，我暂时还是在短暂地接触上手的阶段，没有原创的经验。这里摘录一些比较基础、常用的使用示例，我个人遇到的一些问题，以及对应的解决方案。因为来源太多，很难一一记录，这里声明，除有特别说明的以外，本文的示例代码和解决方案都并非原创。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Python" scheme="https://hoshino.club/categories/Python/"/>
-    
-    
-    <category term="Python" scheme="https://hoshino.club/tags/Python/"/>
-    
-    <category term="PyQ5" scheme="https://hoshino.club/tags/PyQ5/"/>
-    
-    <category term="GUI" scheme="https://hoshino.club/tags/GUI/"/>
+    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
     
   </entry>
   
