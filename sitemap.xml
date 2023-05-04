@@ -308,7 +308,14 @@
   </url>
   
   <url>
-    <loc>https://hoshino.club/tags/PsychoPy/</loc>
+    <loc>https://hoshino.club/tags/golang/</loc>
+    <lastmod>2023-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hoshino.club/tags/vscode/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -316,6 +323,13 @@
   
   <url>
     <loc>https://hoshino.club/tags/ctypes/</loc>
+    <lastmod>2023-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hoshino.club/tags/PsychoPy/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -343,35 +357,7 @@
   </url>
   
   <url>
-    <loc>https://hoshino.club/tags/golang/</loc>
-    <lastmod>2023-05-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hoshino.club/tags/vscode/</loc>
-    <lastmod>2023-05-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://hoshino.club/tags/%E6%94%BF%E6%B2%BB%E7%A4%BE%E4%BC%9A%E5%AD%A6/</loc>
-    <lastmod>2023-05-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hoshino.club/tags/%E5%BF%83%E7%90%86%E5%AD%A6/</loc>
-    <lastmod>2023-05-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hoshino.club/tags/%E4%BA%BA%E7%B1%BB%E5%AD%A6/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -392,6 +378,20 @@
   </url>
   
   <url>
+    <loc>https://hoshino.club/tags/%E5%BF%83%E7%90%86%E5%AD%A6/</loc>
+    <lastmod>2023-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hoshino.club/tags/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/</loc>
+    <lastmod>2023-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://hoshino.club/tags/%E6%96%87%E7%8C%AE%E8%AF%84%E8%BF%B0/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -406,20 +406,6 @@
   </url>
   
   <url>
-    <loc>https://hoshino.club/tags/%E8%AF%BE%E7%A8%8B%E4%BD%9C%E4%B8%9A/</loc>
-    <lastmod>2023-05-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hoshino.club/tags/%E5%AD%A4%E7%8B%AC%E6%91%87%E6%BB%9A/</loc>
-    <lastmod>2023-05-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://hoshino.club/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -428,6 +414,13 @@
   
   <url>
     <loc>https://hoshino.club/tags/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/</loc>
+    <lastmod>2023-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hoshino.club/tags/%E4%BA%BA%E7%B1%BB%E5%AD%A6/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -449,6 +442,13 @@
   
   <url>
     <loc>https://hoshino.club/tags/%E6%B5%81%E5%AA%92%E4%BD%93/</loc>
+    <lastmod>2023-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hoshino.club/tags/%E5%AD%A4%E7%8B%AC%E6%91%87%E6%BB%9A/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -478,6 +478,13 @@
   </url>
   
   <url>
+    <loc>https://hoshino.club/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2023-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://hoshino.club/categories/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -499,21 +506,7 @@
   </url>
   
   <url>
-    <loc>https://hoshino.club/categories/%E7%BC%96%E7%A8%8B%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2023-05-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://hoshino.club/categories/%E8%AE%BA%E6%96%87/</loc>
-    <lastmod>2023-05-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hoshino.club/categories/%E9%9D%9E%E6%AD%A3%E5%BC%8F%E8%AE%BA%E6%96%87/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -535,6 +528,13 @@
   
   <url>
     <loc>https://hoshino.club/categories/%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2023-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hoshino.club/categories/%E9%9D%9E%E6%AD%A3%E5%BC%8F%E8%AE%BA%E6%96%87/</loc>
     <lastmod>2023-05-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
