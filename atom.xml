@@ -6,7 +6,7 @@
   <link href="https://hoshino.club/atom.xml" rel="self"/>
   
   <link href="https://hoshino.club/"/>
-  <updated>2023-05-06T16:41:30.758Z</updated>
+  <updated>2023-05-21T15:27:51.818Z</updated>
   <id>https://hoshino.club/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>腾讯云对象存储COS的JavaScript SDK试用记录</title>
+    <link href="https://hoshino.club/2023/05/21/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8COS%E7%9A%84JavaScript-SDK%E8%AF%95%E7%94%A8/"/>
+    <id>https://hoshino.club/2023/05/21/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8COS%E7%9A%84JavaScript-SDK%E8%AF%95%E7%94%A8/</id>
+    <published>2023-05-21T13:11:52.000Z</published>
+    <updated>2023-05-21T15:27:51.818Z</updated>
+    
+    
+    <summary type="html">搓了一个极简UI来试用SDK功能。</summary>
+    
+    
+    
+    <category term="技术" scheme="https://hoshino.club/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="对象存储" scheme="https://hoshino.club/tags/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/"/>
+    
+    <category term="腾讯云" scheme="https://hoshino.club/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/"/>
+    
+    <category term="JavaScript" scheme="https://hoshino.club/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>论「青春コンプレックス」为何不宜译作《青春症候群》</title>
@@ -301,7 +324,6 @@
     
     
     <summary type="html">&lt;p&gt;文献笔记的记录和收集。&lt;/p&gt;
-&lt;div class=&quot;table-container&quot;&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -315,8 +337,7 @@
 &lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://doi.org/10.1186/s11689-019-9287-8&quot;&gt;https://doi.org/10.1186/s11689-019-9287-8&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;</summary>
+&lt;/table&gt;</summary>
     
     
     
@@ -459,27 +480,6 @@
     
     
     <summary type="html">&lt;p&gt;这次看的还是绪论部分，大致讲述了心理学和“常识”的冲突，有价值的地方有不少。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="心理学" scheme="https://hoshino.club/categories/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-    
-    
-    <category term="这才是心理学" scheme="https://hoshino.club/tags/%E8%BF%99%E6%89%8D%E6%98%AF%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-    
-    <category term="摘录" scheme="https://hoshino.club/tags/%E6%91%98%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How To Think Straight About Psychology - 摘录 1</title>
-    <link href="https://hoshino.club/2020/03/28/How-to-think-straight-about-psychology-%E6%91%98%E5%BD%951/"/>
-    <id>https://hoshino.club/2020/03/28/How-to-think-straight-about-psychology-%E6%91%98%E5%BD%951/</id>
-    <published>2020-03-28T09:32:54.000Z</published>
-    <updated>2021-07-10T07:38:06.439Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;来自Keith E. Stanovich所著的&lt;em&gt;How To Think Straight About Psychology&lt;/em&gt;，人民邮电出版社，英文版，第十版。简单地摘录一些句子，以备期末作业使用。会附一些简评。&lt;/p&gt;</summary>
     
     
     
