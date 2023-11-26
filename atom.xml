@@ -6,7 +6,7 @@
   <link href="https://hoshino.club/atom.xml" rel="self"/>
   
   <link href="https://hoshino.club/"/>
-  <updated>2023-05-21T15:27:51.818Z</updated>
+  <updated>2023-06-05T08:46:55.034Z</updated>
   <id>https://hoshino.club/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://hoshino.club/2023/05/21/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8COS%E7%9A%84JavaScript-SDK%E8%AF%95%E7%94%A8/"/>
     <id>https://hoshino.club/2023/05/21/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8COS%E7%9A%84JavaScript-SDK%E8%AF%95%E7%94%A8/</id>
     <published>2023-05-21T13:11:52.000Z</published>
-    <updated>2023-05-21T15:27:51.818Z</updated>
+    <updated>2023-06-05T08:46:55.034Z</updated>
     
     
     <summary type="html">搓了一个极简UI来试用SDK功能。</summary>
@@ -98,16 +98,10 @@
     <link href="https://hoshino.club/2022/11/15/PsychoPy%E4%B8%8EJavaScript%E4%B8%8E%E7%BA%BF%E4%B8%8A%E5%AE%9E%E9%AA%8C/"/>
     <id>https://hoshino.club/2022/11/15/PsychoPy%E4%B8%8EJavaScript%E4%B8%8E%E7%BA%BF%E4%B8%8A%E5%AE%9E%E9%AA%8C/</id>
     <published>2022-11-15T15:33:56.000Z</published>
-    <updated>2022-11-17T08:35:47.688Z</updated>
+    <updated>2023-11-26T15:56:20.442Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
+    <summary type="html">介绍PsychoPy线上实验的思路、实践和部分技术细节。</summary>
     
     
     
@@ -117,6 +111,10 @@
     <category term="Python" scheme="https://hoshino.club/tags/Python/"/>
     
     <category term="PsychoPy" scheme="https://hoshino.club/tags/PsychoPy/"/>
+    
+    <category term="心理学" scheme="https://hoshino.club/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    
+    <category term="线上实验" scheme="https://hoshino.club/tags/%E7%BA%BF%E4%B8%8A%E5%AE%9E%E9%AA%8C/"/>
     
   </entry>
   
@@ -324,6 +322,7 @@
     
     
     <summary type="html">&lt;p&gt;文献笔记的记录和收集。&lt;/p&gt;
+&lt;div class=&quot;table-container&quot;&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -337,7 +336,8 @@
 &lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://doi.org/10.1186/s11689-019-9287-8&quot;&gt;https://doi.org/10.1186/s11689-019-9287-8&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</summary>
+&lt;/table&gt;
+&lt;/div&gt;</summary>
     
     
     
