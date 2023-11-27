@@ -69,7 +69,7 @@
     <link href="https://hoshino.club/2022/11/16/%E9%9F%B3%E6%B3%89%E5%B9%BF%E6%92%AD%E4%B8%8B%E8%BD%BD%E6%96%B9%E6%B3%95%E6%8E%A2%E7%B4%A2/"/>
     <id>https://hoshino.club/2022/11/16/%E9%9F%B3%E6%B3%89%E5%B9%BF%E6%92%AD%E4%B8%8B%E8%BD%BD%E6%96%B9%E6%B3%95%E6%8E%A2%E7%B4%A2/</id>
     <published>2022-11-16T14:10:33.000Z</published>
-    <updated>2022-11-17T08:15:22.705Z</updated>
+    <updated>2023-11-27T09:06:07.635Z</updated>
     
     
       
@@ -98,7 +98,7 @@
     <link href="https://hoshino.club/2022/11/15/PsychoPy%E4%B8%8EJavaScript%E4%B8%8E%E7%BA%BF%E4%B8%8A%E5%AE%9E%E9%AA%8C/"/>
     <id>https://hoshino.club/2022/11/15/PsychoPy%E4%B8%8EJavaScript%E4%B8%8E%E7%BA%BF%E4%B8%8A%E5%AE%9E%E9%AA%8C/</id>
     <published>2022-11-15T15:33:56.000Z</published>
-    <updated>2023-11-26T15:56:20.442Z</updated>
+    <updated>2023-11-27T09:08:45.583Z</updated>
     
     
     <summary type="html">介绍PsychoPy线上实验的思路、实践和部分技术细节。</summary>
@@ -108,7 +108,7 @@
     <category term="技术" scheme="https://hoshino.club/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="Python" scheme="https://hoshino.club/tags/Python/"/>
+    <category term="PsychoJS" scheme="https://hoshino.club/tags/PsychoJS/"/>
     
     <category term="PsychoPy" scheme="https://hoshino.club/tags/PsychoPy/"/>
     
@@ -322,7 +322,6 @@
     
     
     <summary type="html">&lt;p&gt;文献笔记的记录和收集。&lt;/p&gt;
-&lt;div class=&quot;table-container&quot;&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -336,8 +335,7 @@
 &lt;td style=&quot;text-align:left&quot;&gt;&lt;a href=&quot;https://doi.org/10.1186/s11689-019-9287-8&quot;&gt;https://doi.org/10.1186/s11689-019-9287-8&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;</summary>
+&lt;/table&gt;</summary>
     
     
     
