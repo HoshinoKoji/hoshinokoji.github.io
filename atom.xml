@@ -98,10 +98,10 @@
     <link href="https://hoshino.club/2022/11/15/PsychoPy%E4%B8%8EJavaScript%E4%B8%8E%E7%BA%BF%E4%B8%8A%E5%AE%9E%E9%AA%8C/"/>
     <id>https://hoshino.club/2022/11/15/PsychoPy%E4%B8%8EJavaScript%E4%B8%8E%E7%BA%BF%E4%B8%8A%E5%AE%9E%E9%AA%8C/</id>
     <published>2022-11-15T15:33:56.000Z</published>
-    <updated>2023-11-27T09:12:37.738Z</updated>
+    <updated>2023-11-30T07:39:30.917Z</updated>
     
     
-    <summary type="html">介绍PsychoPy线上实验的思路、实践和部分技术细节。</summary>
+    <summary type="html">介绍 PsychoPy、PsychoJS 实现线上实验，完成本地调试、添加组件、接管实验部署和数据上传的思路和实践。</summary>
     
     
     
